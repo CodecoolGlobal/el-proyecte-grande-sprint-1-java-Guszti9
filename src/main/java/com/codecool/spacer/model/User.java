@@ -2,7 +2,6 @@ package com.codecool.spacer.model;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class User {
