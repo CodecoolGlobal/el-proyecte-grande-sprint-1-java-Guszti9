@@ -1,31 +1,41 @@
 package com.codecool.spacer.dao.mem;
 
+import com.codecool.spacer.dao.SpaceShipDao;
 import com.codecool.spacer.model.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-public class SpaceShipDaoMem {
+public class SpaceShipDaoMem implements SpaceShipDao {
     private List<SpaceShip> spaceShips;
 
-
+    @Override
     public SpaceShip getSpaceShipById(int id){
         return null;
     }
 
+    @Override
     public List<SpaceShip> getSpaceShips() {
         return spaceShips;
     }
 
+    @Override
+    public void filterSpaceShips() {
+
+    }
+
+    @Override
     public void addSpaceShip(SpaceShip spaceShip){
 
     }
 
-    public void deleteSpaceShip(SpaceShip spaceShip){
+    @Override
+    public void deleteSpaceShip(int id) {
 
     }
 
-    public void rentSpaceShip(SpaceShip spaceShip){
+    @Override
+    public void rentSpaceShip(int id) {
 
     }
 
