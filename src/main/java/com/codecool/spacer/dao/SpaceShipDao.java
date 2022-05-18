@@ -10,9 +10,11 @@ public interface SpaceShipDao {
 
     List<SpaceShip> getSpaceShips();
 
-    void filterSpaceShips();
+    List<SpaceShip> filterSpaceShips();
 
     void addSpaceShip(SpaceShip spaceShip);
+
+    void editSpaceShip(int id, SpaceShip spaceShip);
 
     void deleteSpaceShip(int id);
 

@@ -20,12 +20,17 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     @Override
-    public void filterSpaceShips() {
-
+    public List<SpaceShip> filterSpaceShips() {
+        return null;
     }
 
     @Override
     public void addSpaceShip(SpaceShip spaceShip){
+
+    }
+
+    @Override
+    public void editSpaceShip(int id, SpaceShip spaceShip) {
 
     }
 
