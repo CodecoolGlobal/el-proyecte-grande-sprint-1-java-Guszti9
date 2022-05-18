@@ -20,7 +20,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     @Override
-    public List<SpaceShip> filterSpaceShips() {
+    public List<SpaceShip> filterSpaceShips(Filter filter) {
         return null;
     }
 
@@ -84,7 +84,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
         return null;
     }
 
-    private List<SpaceShip> filterByUser(User use, List<SpaceShip> spaceShips){
+    private List<SpaceShip> filterByUser(User user, List<SpaceShip> spaceShips){
         return null;
     }
 

@@ -1,6 +1,7 @@
 package com.codecool.spacer.service;
 
 import com.codecool.spacer.dao.SpaceShipDao;
+import com.codecool.spacer.model.Filter;
 import com.codecool.spacer.model.SpaceShip;
 
 import java.util.List;
@@ -16,8 +17,8 @@ public class SpaceShipService {
         return spaceShipDao.getSpaceShips();
     }
 
-    public List<SpaceShip> filterSpaceShip() {
-        return spaceShipDao.filterSpaceShips();
+    public List<SpaceShip> filterSpaceShips(Filter filter) {
+        return spaceShipDao.filterSpaceShips(filter);
     }
 
     public void addSpaceShip(SpaceShip spaceShip) {
