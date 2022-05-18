@@ -3,11 +3,17 @@ package com.codecool.spacer.service;
 import com.codecool.spacer.dao.SpaceShipDao;
 import com.codecool.spacer.model.Filter;
 import com.codecool.spacer.model.SpaceShip;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class SpaceShipService {
-    private SpaceShipDao spaceShipDao;
+    private final SpaceShipDao spaceShipDao;
+
+    @Autowired
+    public SpaceShipService(SpaceShipDao spaceShipDao) {
+        this.spaceShipDao = spaceShipDao;
+    }
 
     public SpaceShip getSpaceShipById(int id) {
         return spaceShipDao.getSpaceShipById(id);

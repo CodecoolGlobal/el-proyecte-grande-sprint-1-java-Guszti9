@@ -4,10 +4,11 @@ import com.codecool.spacer.dao.SpaceShipDao;
 import com.codecool.spacer.model.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SpaceShipDaoMem implements SpaceShipDao {
-    private List<SpaceShip> spaceShips;
+    private final List<SpaceShip> spaceShips = new ArrayList<>();
 
     @Override
     public SpaceShip getSpaceShipById(int id){
