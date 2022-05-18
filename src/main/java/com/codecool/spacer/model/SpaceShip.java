@@ -9,6 +9,7 @@ public class SpaceShip {
     private int id = idCounter++;
 
     private String name;
+    private String brand;
     private int year;
     private String description;
     private boolean weapons;
@@ -21,9 +22,11 @@ public class SpaceShip {
     private Manufacturer manufacturer;
     private Calendar calendar;
     private User user;
+    private boolean isAvailable;
 
-    public SpaceShip(String name, int year, String description, boolean weapons, int mass, int length, int maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, User user) {
+    public SpaceShip(String name, String brand, int year, String description, boolean weapons, int mass, int length, int maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, User user) {
         this.name = name;
+        this.brand = brand;
         this.year = year;
         this.description = description;
         this.weapons = weapons;
@@ -36,5 +39,6 @@ public class SpaceShip {
         this.manufacturer = manufacturer;
         this.calendar = new GregorianCalendar();
         this.user = user;
+        this.isAvailable = true;
     }
 }
