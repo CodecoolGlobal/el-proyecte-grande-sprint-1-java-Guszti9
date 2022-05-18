@@ -8,6 +8,17 @@ import java.util.List;
 public class UserDaoMem implements UserDao {
 
     List<User> allUsers;
+
+    @Override
+    public User getUserById(int userId) {
+        return null;
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return null;
+    }
+
     @Override
     public void addUser(User user){
 
