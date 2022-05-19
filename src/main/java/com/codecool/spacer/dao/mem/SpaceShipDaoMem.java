@@ -53,7 +53,9 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     private List<SpaceShip> filterByYear(int year, List<SpaceShip> spaceShips){
-        return null;
+        return spaceShips.stream()
+                .filter(spaceShip -> spaceShip.getYear() == year)
+                .collect(Collectors.toList());
     }
 
     private List<SpaceShip> filterByWeapons(boolean weapons, List<SpaceShip> spaceShips){
