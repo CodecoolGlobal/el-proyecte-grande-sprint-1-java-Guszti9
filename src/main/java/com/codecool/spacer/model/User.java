@@ -31,4 +31,8 @@ public class User {
         this.faceBook = facebook;
         ships = new ArrayList<>();
     }
+
+    public int getId() {
+        return id;
+    }
 }
