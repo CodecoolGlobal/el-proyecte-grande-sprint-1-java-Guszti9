@@ -1,5 +1,7 @@
 package com.codecool.spacer.model;
 
+import com.codecool.spacer.model.calendar.ShipBook;
+
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ public class User {
     private String linkedIn;
     private String faceBook;
     private List<SpaceShip> ships;
+    private List<ShipBook> reservations;
 
     public User(String firsName, String lastName, Path picture, String description, String password, String phoneNumber, String email, String linkedIn, String facebook) {
         this.firstName = firsName;
@@ -30,6 +33,15 @@ public class User {
         this.linkedIn = linkedIn;
         this.faceBook = facebook;
         ships = new ArrayList<>();
+        reservations = new ArrayList<>();
+    }
+
+    public void addReservation(ShipBook shipBook) {
+        reservations.add(shipBook);
+    }
+
+    public void removeReservation(ShipBook shipBook) {
+        reservations.remove(shipBook);
     }
 
     public int getId() {

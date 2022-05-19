@@ -1,7 +1,11 @@
 package com.codecool.spacer.model;
 
+import com.codecool.spacer.model.calendar.ShipCalendar;
+import com.codecool.spacer.model.shipdata.Classification;
+import com.codecool.spacer.model.shipdata.FuelType;
+import com.codecool.spacer.model.shipdata.Manufacturer;
+
 import java.math.BigDecimal;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class SpaceShip {
@@ -20,7 +24,7 @@ public class SpaceShip {
     private Classification classification;
     private FuelType fuelType;
     private Manufacturer manufacturer;
-    private Calendar calendar;
+    private ShipCalendar shipCalendar;
     private int userId;
     private boolean isAvailable;
 
@@ -37,7 +41,7 @@ public class SpaceShip {
         this.classification = classification;
         this.fuelType = fuelType;
         this.manufacturer = manufacturer;
-        this.calendar = new GregorianCalendar();
+        this.shipCalendar = new ShipCalendar(id);
         this.userId = userId;
         this.isAvailable = true;
     }

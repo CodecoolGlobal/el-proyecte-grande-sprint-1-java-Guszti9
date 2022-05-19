@@ -1,4 +1,4 @@
-package com.codecool.spacer.model;
+package com.codecool.spacer.model.shipdata;
 
 public enum Manufacturer {
     AEGIS_DYNAMICS, ANVIL_AEROSPACE, ARGO_ASTRONAUTICS, BANU, CRUSADER_INDUSTRIES, DRAKE_INTERPLANETARY,

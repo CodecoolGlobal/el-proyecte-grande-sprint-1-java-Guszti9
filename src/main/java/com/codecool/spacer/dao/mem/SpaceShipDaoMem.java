@@ -2,6 +2,9 @@ package com.codecool.spacer.dao.mem;
 
 import com.codecool.spacer.dao.SpaceShipDao;
 import com.codecool.spacer.model.*;
+import com.codecool.spacer.model.shipdata.Classification;
+import com.codecool.spacer.model.shipdata.FuelType;
+import com.codecool.spacer.model.shipdata.Manufacturer;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
