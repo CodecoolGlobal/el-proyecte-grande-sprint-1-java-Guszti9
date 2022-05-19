@@ -77,7 +77,9 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     private List<SpaceShip> filterByMaxCrew(int maxCrew, List<SpaceShip> spaceShips){
-        return null;
+        return spaceShips.stream()
+                .filter(spaceShip -> spaceShip.getMaxCrew() == maxCrew)
+                .collect(Collectors.toList());
     }
 
     private List<SpaceShip> filterByPrice(BigDecimal price, List<SpaceShip> spaceShips){
