@@ -36,5 +36,11 @@ public class User {
         reservations = new ArrayList<>();
     }
 
+    public void addReservation(ShipBook shipBook) {
+        reservations.add(shipBook);
+    }
 
+    public void removeReservation(ShipBook shipBook) {
+        reservations.remove(shipBook);
+    }
 }

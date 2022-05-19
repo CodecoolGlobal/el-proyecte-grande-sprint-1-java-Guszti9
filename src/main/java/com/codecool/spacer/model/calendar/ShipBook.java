@@ -15,4 +15,12 @@ public class ShipBook {
         this.startDay = startDay;
         this.endDay = endDay;
     }
+
+    public int getShipId() {
+        return shipId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
 }
