@@ -14,21 +14,21 @@ public class SpaceShip {
 
     private String name;
     private String brand;
-    private int year;
+    private Integer year;
     private String description;
-    private boolean weapons;
-    private int mass;
-    private int length;
-    private int maxCrew;
+    private Boolean weapons;
+    private Integer mass;
+    private Integer length;
+    private Integer maxCrew;
     private BigDecimal price;
     private Classification classification;
     private FuelType fuelType;
     private Manufacturer manufacturer;
     private ShipCalendar shipCalendar;
     private int userId;
-    private boolean isAvailable;
+    private Boolean isAvailable;
 
-    public SpaceShip(String name, String brand, int year, String description, boolean weapons, int mass, int length, int maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, int userId) {
+    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, int userId) {
         this.name = name;
         this.brand = brand;
         this.year = year;
@@ -60,7 +60,7 @@ public class SpaceShip {
         return brand;
     }
 
-    public int getYear() {
+    public Integer getYear() {
         return year;
     }
 
@@ -68,19 +68,19 @@ public class SpaceShip {
         return description;
     }
 
-    public boolean getWeapons() {
+    public Boolean getWeapons() {
         return weapons;
     }
 
-    public int getMass() {
+    public Integer getMass() {
         return mass;
     }
 
-    public int getLength() {
+    public Integer getLength() {
         return length;
     }
 
-    public int getMaxCrew() {
+    public Integer getMaxCrew() {
         return maxCrew;
     }
 
@@ -104,7 +104,59 @@ public class SpaceShip {
         return userId;
     }
 
-    public boolean isAvailable() {
+    public Boolean isAvailable() {
         return isAvailable;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setWeapons(boolean weapons) {
+        this.weapons = weapons;
+    }
+
+    public void setMass(int mass) {
+        this.mass = mass;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setMaxCrew(int maxCrew) {
+        this.maxCrew = maxCrew;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public void setClassification(Classification classification) {
+        this.classification = classification;
+    }
+
+    public void setFuelType(FuelType fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    public void setManufacturer(Manufacturer manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 }
