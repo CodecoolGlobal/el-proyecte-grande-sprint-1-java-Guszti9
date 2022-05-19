@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SpaceShipDaoMem implements SpaceShipDao {
-    private final List<SpaceShip> spaceShips = new ArrayList<>();
+    private List<SpaceShip> spaceShips = new ArrayList<>();
 
     @Override
     public SpaceShip getSpaceShipById(int id){
@@ -31,10 +31,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     @Override
     public List<SpaceShip> filterSpaceShips(Filter filter) {
-        List<SpaceShip> resultSpaceShipList = new ArrayList<>(spaceShips); //ask Mentor
-        if (filter.getBrand() != null){
-            resultSpaceShipList = filterByBrand(filter.getBrand(), resultSpaceShipList);
-        }
+        List<SpaceShip> resultSpaceShipList = new ArrayList<>(spaceShips);
         if (filter.getYear() != null){
             resultSpaceShipList = filterByYear(filter.getYear(), resultSpaceShipList);
         }
@@ -68,12 +65,20 @@ public class SpaceShipDaoMem implements SpaceShipDao {
         if (filter.isAvailable() != null){
             resultSpaceShipList = filterAvailable(resultSpaceShipList);
         }
+
         return resultSpaceShipList;
     }
 
     @Override
     public void addSpaceShip(SpaceShip spaceShip){
         spaceShips.add(spaceShip);
+    }
+
+    @Override
+    public void addSpaceShips(SpaceShip[] spaceShips){
+        for (SpaceShip spaceShip : spaceShips) {
+            this.spaceShips.add(spaceShip);
+        }
     }
 
     @Override
@@ -91,12 +96,6 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     }
 
-    private List<SpaceShip> filterByBrand(String brand, List<SpaceShip> spaceShips){
-        return spaceShips.stream()
-                .filter(spaceShip -> spaceShip.getBrand().equals(brand))
-                .collect(Collectors.toList());
-    }
-
     private List<SpaceShip> filterByYear(int year, List<SpaceShip> spaceShips){
         return spaceShips.stream()
                 .filter(spaceShip -> spaceShip.getYear() >= year)
@@ -105,7 +104,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     private List<SpaceShip> filterByWeapons(boolean weapons, List<SpaceShip> spaceShips){
         return spaceShips.stream()
-                .filter(spaceShip -> spaceShip.hasWeapons() == weapons)
+                .filter(spaceShip -> spaceShip.getWeapons() == weapons)
                 .collect(Collectors.toList());
     }
 
@@ -117,7 +116,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     private List<SpaceShip> filterByLength(int minLength, int maxLength, List<SpaceShip> spaceShips){
         return spaceShips.stream()
-                .filter(spaceShip -> spaceShip.getLength() >= minLength && spaceShip.getLength() <= minLength)
+                .filter(spaceShip -> spaceShip.getLength() >= minLength && spaceShip.getLength() <= maxLength)
                 .collect(Collectors.toList());
     }
 

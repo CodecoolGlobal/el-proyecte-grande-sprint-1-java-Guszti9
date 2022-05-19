@@ -7,7 +7,6 @@ import com.codecool.spacer.model.shipdata.Manufacturer;
 import java.math.BigDecimal;
 
 public class Filter {
-    private String brand;
     private Integer year;
     private Boolean weapons;
     private Integer minMass;
@@ -23,8 +22,7 @@ public class Filter {
     private Integer userId;
     private Boolean isAvailable;
 
-    public Filter(String brand, Integer year, Boolean weapons, Integer minMass, Integer maxMass, Integer minLength, Integer maxLength, Integer maxCrew, BigDecimal minPrice, BigDecimal maxPrice, Classification classification, FuelType fuelType, Manufacturer manufacturer, Integer userId, Boolean isAvailable) {
-        this.brand = brand;
+    public Filter(Integer year, Boolean weapons, Integer minMass, Integer maxMass, Integer minLength, Integer maxLength, Integer maxCrew, BigDecimal minPrice, BigDecimal maxPrice, Classification classification, FuelType fuelType, Manufacturer manufacturer, Integer userId, Boolean isAvailable) {
         this.year = year;
         this.weapons = weapons;
         this.minMass = minMass;
@@ -39,10 +37,6 @@ public class Filter {
         this.manufacturer = manufacturer;
         this.userId = userId;
         this.isAvailable = isAvailable;
-    }
-
-    public String getBrand() {
-        return brand;
     }
 
     public Integer getYear() {

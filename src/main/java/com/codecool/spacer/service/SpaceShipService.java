@@ -31,6 +31,10 @@ public class SpaceShipService {
         spaceShipDao.addSpaceShip(spaceShip);
     }
 
+    public void addSpaceShips(SpaceShip[] spaceShips) {
+        spaceShipDao.addSpaceShips(spaceShips);
+    }
+
     public void editSpaceShip(int id, SpaceShip spaceShip) {
         spaceShipDao.editSpaceShip(id, spaceShip);
     }
