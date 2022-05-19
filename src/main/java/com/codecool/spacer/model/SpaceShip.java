@@ -99,4 +99,17 @@ public class SpaceShip {
     public boolean isAvailable() {
         return isAvailable;
     }
+
+    public void editSpaceShip(SpaceShip spaceShip) {
+        brand = spaceShip.getBrand();
+        year = spaceShip.getYear();
+        weapons = spaceShip.hasWeapons();
+        length = spaceShip.getLength();
+        maxCrew = spaceShip.getMaxCrew();
+        price = spaceShip.getPrice();
+        classification = spaceShip.getClassification();
+        fuelType = spaceShip.getFuelType();
+        manufacturer = spaceShip.getManufacturer();
+        isAvailable = spaceShip.isAvailable();
+    }
 }
