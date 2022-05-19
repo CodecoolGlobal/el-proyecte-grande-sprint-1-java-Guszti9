@@ -65,7 +65,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     @Override
     public void addSpaceShip(SpaceShip spaceShip){
-
+        spaceShips.add(spaceShip);
     }
 
     @Override
