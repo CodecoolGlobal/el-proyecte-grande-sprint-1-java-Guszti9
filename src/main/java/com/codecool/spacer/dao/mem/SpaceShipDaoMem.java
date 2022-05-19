@@ -70,8 +70,10 @@ public class SpaceShipDaoMem implements SpaceShipDao {
                 .collect(Collectors.toList());
     }
 
-    private List<SpaceShip> filterByLength(int length, List<SpaceShip> spaceShips){
-        return null;
+    private List<SpaceShip> filterByLength(int minLength, int maxLength, List<SpaceShip> spaceShips){
+        return spaceShips.stream()
+                .filter(spaceShip -> spaceShip.getLength() >= minLength && spaceShip.getLength() <= minLength)
+                .collect(Collectors.toList());
     }
 
     private List<SpaceShip> filterByMaxCrew(int maxCrew, List<SpaceShip> spaceShips){
