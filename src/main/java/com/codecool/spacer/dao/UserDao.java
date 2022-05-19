@@ -18,4 +18,6 @@ public interface UserDao {
     void deleteUser(int userId);
 
     void addShipToUser(int userId, SpaceShip ship);
+
+    void removeShipFromUser(int userId, int shipId);
 }

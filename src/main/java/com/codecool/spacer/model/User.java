@@ -2,9 +2,11 @@ package com.codecool.spacer.model;
 
 import com.codecool.spacer.model.calendar.ShipBook;
 
+import javax.swing.text.html.Option;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class User {
     private static int idCounter = 0;
@@ -87,8 +89,13 @@ public class User {
         ships.add(spaceShip);
     }
 
-    public void removeShip(SpaceShip spaceShip) {
-        ships.remove(spaceShip);
+    public boolean removeShip(int shipId) {
+        Optional<SpaceShip> ship = ships.stream().filter(s -> s.getId() == shipId).findFirst();
+
+        if(ship.isPresent()) {
+            ships.remove(ship.get());
+            return true;
+        } else return false;
     }
 
     public void addReservation(ShipBook shipBook) {
