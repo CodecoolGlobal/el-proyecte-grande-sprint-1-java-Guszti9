@@ -1,6 +1,7 @@
 package com.codecool.spacer.controller;
 
 
+import com.codecool.spacer.model.SpaceShip;
 import com.codecool.spacer.model.User;
 import com.codecool.spacer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,13 +34,23 @@ public class UserController {
         userService.addUser(user);
     }
 
-    @PutMapping("api/user/edit/{id}")
+    @PutMapping("api/user/{id}/edit")
     public void editUser(@PathVariable int id, @RequestBody User user){
         userService.editUser(user, id);
     }
 
-    @DeleteMapping("api/user/delete/{id}")
+    @DeleteMapping("api/user/{id}/delete")
     public void deleteUser(@PathVariable int id){
         userService.deleteUser(id);
+    }
+
+    @PostMapping("api/user/{userId}/add_ship")
+    public void addShipToUser(@PathVariable int userId, @RequestBody SpaceShip spaceShip) {
+        userService.addShipToUser(userId, spaceShip);
+    }
+
+    @DeleteMapping("api/user/{userId}/remove_ship/{shipId}")
+    public void removeShipFromUser(@PathVariable int userId, @PathVariable int shipId) {
+        userService.removeShipFromUser(userId, shipId);
     }
 }
