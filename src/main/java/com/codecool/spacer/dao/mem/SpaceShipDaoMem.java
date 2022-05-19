@@ -82,8 +82,10 @@ public class SpaceShipDaoMem implements SpaceShipDao {
                 .collect(Collectors.toList());
     }
 
-    private List<SpaceShip> filterByPrice(BigDecimal price, List<SpaceShip> spaceShips){
-        return null;
+    private List<SpaceShip> filterByPrice(BigDecimal minPrice, BigDecimal maxPrice, List<SpaceShip> spaceShips){
+        return spaceShips.stream()
+                .filter(spaceShip -> spaceShip.getPrice().compareTo(minPrice) > 0 && spaceShip.getPrice().compareTo(maxPrice) < 0)
+                .collect(Collectors.toList());
     }
 
     private List<SpaceShip> filterByClassification(Classification classification, List<SpaceShip> spaceShips){
