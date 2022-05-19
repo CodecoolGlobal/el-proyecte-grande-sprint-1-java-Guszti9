@@ -83,6 +83,14 @@ public class User {
         linkedIn = user.getLinkedIn();
     }
 
+    public void addShip(SpaceShip spaceShip) {
+        ships.add(spaceShip);
+    }
+
+    public void removeShip(SpaceShip spaceShip) {
+        ships.remove(spaceShip);
+    }
+
     public void addReservation(ShipBook shipBook) {
         reservations.add(shipBook);
     }
