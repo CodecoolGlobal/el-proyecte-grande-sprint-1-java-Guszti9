@@ -11,7 +11,7 @@ public class UserDaoMem implements UserDao {
 
     @Override
     public User getUserById(int userId) {
-        return null;
+        return allUsers.stream().filter(u -> u.getId() == userId).findFirst().orElseGet(null);
     }
 
     @Override
@@ -21,17 +21,17 @@ public class UserDaoMem implements UserDao {
 
     @Override
     public void addUser(User user){
-
+        allUsers.add(user);
     }
 
     @Override
     public void editUser(User user, int userId) {
-
+        allUsers.stream().filter(u -> u.getId() == userId).findFirst().ifPresent(u -> u.editUser(user));
     }
 
     @Override
     public void deleteUser(int userId){
-
+        allUsers.remove(allUsers.stream().filter(u -> u.getId() == userId).findFirst().get());
     }
 
 }
