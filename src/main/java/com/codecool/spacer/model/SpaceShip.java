@@ -111,7 +111,7 @@ public class SpaceShip {
     public void editSpaceShip(SpaceShip spaceShip) {
         brand = spaceShip.getBrand();
         year = spaceShip.getYear();
-        weapons = spaceShip.hasWeapons();
+        weapons = spaceShip.getWeapons();
         length = spaceShip.getLength();
         maxCrew = spaceShip.getMaxCrew();
         price = spaceShip.getPrice();
