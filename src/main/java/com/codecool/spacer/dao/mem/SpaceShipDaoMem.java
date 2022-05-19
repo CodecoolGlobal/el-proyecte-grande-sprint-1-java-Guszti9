@@ -23,7 +23,44 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     @Override
     public List<SpaceShip> filterSpaceShips(Filter filter) {
-        return null;
+        List<SpaceShip> resultSpaceShipList = new ArrayList<>(spaceShips); //ask Mentor
+        if (filter.getBrand() != null){
+            resultSpaceShipList = filterByBrand(filter.getBrand(), resultSpaceShipList);
+        }
+        if (filter.getYear() != null){
+            resultSpaceShipList = filterByYear(filter.getYear(), resultSpaceShipList);
+        }
+        if (filter.getWeapons() != null){
+            resultSpaceShipList = filterByWeapons(filter.getWeapons(), resultSpaceShipList);
+        }
+        if (filter.getMinMass() != null && filter.getMaxMass() != null){
+            resultSpaceShipList = filterByMass(filter.getMinMass(), filter.getMaxMass(), resultSpaceShipList);
+        }
+        if (filter.getMinLength() != null && filter.getMaxLength() != null){
+            resultSpaceShipList = filterByLength(filter.getMinLength(), filter.getMaxLength(), resultSpaceShipList);
+        }
+        if (filter.getMaxCrew() != null){
+            resultSpaceShipList = filterByMaxCrew(filter.getMaxCrew(), resultSpaceShipList);
+        }
+        if (filter.getMinPrice() != null && filter.getMaxPrice() != null){
+            resultSpaceShipList = filterByPrice(filter.getMinPrice(), filter.getMaxPrice(), resultSpaceShipList);
+        }
+        if (filter.getClassification() != null){
+            resultSpaceShipList = filterByClassification(filter.getClassification(), resultSpaceShipList);
+        }
+        if (filter.getFuelType() != null){
+            resultSpaceShipList = filterByFuelType(filter.getFuelType(), resultSpaceShipList);
+        }
+        if (filter.getManufacturer() != null){
+            resultSpaceShipList = filterByManufacturer(filter.getManufacturer(), resultSpaceShipList);
+        }
+        if (filter.getUserId() != null){
+            resultSpaceShipList = filterByUser(filter.getUserId(), resultSpaceShipList);
+        }
+        if (filter.isAvailable() != null){
+            resultSpaceShipList = filterAvailable(resultSpaceShipList);
+        }
+        return resultSpaceShipList;
     }
 
     @Override
@@ -106,9 +143,9 @@ public class SpaceShipDaoMem implements SpaceShipDao {
                 .collect(Collectors.toList());
     }
 
-    private List<SpaceShip> filterByUser(User user, List<SpaceShip> spaceShips){
+    private List<SpaceShip> filterByUser(Integer userId, List<SpaceShip> spaceShips){
         return spaceShips.stream()
-                .filter(spaceShip -> spaceShip.getUserId() == user.getId())
+                .filter(spaceShip -> spaceShip.getUserId() == userId)
                 .collect(Collectors.toList());
     }
 
