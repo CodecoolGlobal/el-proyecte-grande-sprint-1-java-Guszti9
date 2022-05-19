@@ -41,4 +41,58 @@ public class SpaceShip {
         this.userId = userId;
         this.isAvailable = true;
     }
+
+    //GETTERS
+
+    public int getId() {
+        return id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public boolean hasWeapons() {
+        return weapons;
+    }
+
+    public int getMass() {
+        return mass;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getMaxCrew() {
+        return maxCrew;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public Classification getClassification() {
+        return classification;
+    }
+
+    public FuelType getFuelType() {
+        return fuelType;
+    }
+
+    public Manufacturer getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
 }

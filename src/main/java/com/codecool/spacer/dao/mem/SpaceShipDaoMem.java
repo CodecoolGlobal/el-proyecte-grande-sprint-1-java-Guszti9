@@ -6,6 +6,7 @@ import com.codecool.spacer.model.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SpaceShipDaoMem implements SpaceShipDao {
     private final List<SpaceShip> spaceShips = new ArrayList<>();
@@ -46,7 +47,9 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     private List<SpaceShip> filterByBrand(String brand, List<SpaceShip> spaceShips){
-        return null;
+        return spaceShips.stream()
+                .filter(spaceShip -> spaceShip.getBrand().equals(brand))
+                .collect(Collectors.toList());
     }
 
     private List<SpaceShip> filterByYear(int year, List<SpaceShip> spaceShips){
@@ -69,7 +72,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
         return null;
     }
 
-    private List<SpaceShip> filterByBrand(BigDecimal price, List<SpaceShip> spaceShips){
+    private List<SpaceShip> filterByPrice(BigDecimal price, List<SpaceShip> spaceShips){
         return null;
     }
 
