@@ -6,6 +6,7 @@ import com.codecool.spacer.service.SpaceShipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 @RestController
@@ -35,6 +36,11 @@ public class SpaceShipController {
     @PostMapping("api/spaceship/add")
     public void addSpaceShip(@RequestBody SpaceShip spaceShip){
         spaceShipService.addSpaceShip(spaceShip);
+    }
+
+    @PostMapping("api/spaceship/add-ships")
+    public void addSpaceShips(@RequestBody SpaceShip[] spaceShips){
+        spaceShipService.addSpaceShips(spaceShips);
     }
 
     @PutMapping("api/spaceship/edit/{id}")

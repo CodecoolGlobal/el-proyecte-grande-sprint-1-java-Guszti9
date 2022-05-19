@@ -52,6 +52,10 @@ public class SpaceShip {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -60,7 +64,11 @@ public class SpaceShip {
         return year;
     }
 
-    public boolean hasWeapons() {
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean getWeapons() {
         return weapons;
     }
 

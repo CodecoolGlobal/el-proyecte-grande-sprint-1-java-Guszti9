@@ -15,6 +15,8 @@ public interface SpaceShipDao {
 
     void addSpaceShip(SpaceShip spaceShip);
 
+    void addSpaceShips(SpaceShip[] spaceShips);
+
     void editSpaceShip(int id, SpaceShip spaceShip);
 
     void deleteSpaceShip(int id);
