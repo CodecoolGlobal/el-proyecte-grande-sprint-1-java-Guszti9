@@ -89,7 +89,9 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     private List<SpaceShip> filterByClassification(Classification classification, List<SpaceShip> spaceShips){
-        return null;
+        return spaceShips.stream()
+                .filter(spaceShip -> spaceShip.getClassification().equals(classification))
+                .collect(Collectors.toList());
     }
 
     private List<SpaceShip> filterByFuelType(FuelType fuelType, List<SpaceShip> spaceShips){
