@@ -1,4 +1,6 @@
-package com.codecool.spacer.model;
+package com.codecool.spacer.model.calendar;
+
+import com.codecool.spacer.model.calendar.ShipBook;
 
 import java.util.*;
 
@@ -15,7 +17,7 @@ public class ShipCalendar {
 
     public boolean addNewBooking(int userId, Date startDate, Date endDate) {
         if (!isTimeOccupied(startDate, endDate)) {
-            rentedDates.add(new ShipBook(userId, startDate, endDate));
+            rentedDates.add(new ShipBook(userId, shipId, startDate, endDate));
             return true;
         }
         return false;

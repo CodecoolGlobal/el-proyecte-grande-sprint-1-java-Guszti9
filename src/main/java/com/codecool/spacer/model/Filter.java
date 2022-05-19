@@ -1,5 +1,9 @@
 package com.codecool.spacer.model;
 
+import com.codecool.spacer.model.shipdata.Classification;
+import com.codecool.spacer.model.shipdata.FuelType;
+import com.codecool.spacer.model.shipdata.Manufacturer;
+
 import java.math.BigDecimal;
 
 public class Filter {
