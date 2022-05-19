@@ -101,7 +101,9 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     private List<SpaceShip> filterByManufacturer(Manufacturer manufacturer, List<SpaceShip> spaceShips){
-        return null;
+        return spaceShips.stream()
+                .filter(spaceShip -> spaceShip.getManufacturer().equals(manufacturer))
+                .collect(Collectors.toList());
     }
 
     private List<SpaceShip> filterByUser(User user, List<SpaceShip> spaceShips){
