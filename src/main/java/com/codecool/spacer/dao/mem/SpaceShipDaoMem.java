@@ -54,7 +54,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     private List<SpaceShip> filterByYear(int year, List<SpaceShip> spaceShips){
         return spaceShips.stream()
-                .filter(spaceShip -> spaceShip.getYear() == year)
+                .filter(spaceShip -> spaceShip.getYear() >= year)
                 .collect(Collectors.toList());
     }
 
@@ -64,8 +64,10 @@ public class SpaceShipDaoMem implements SpaceShipDao {
                 .collect(Collectors.toList());
     }
 
-    private List<SpaceShip> filterByMass(int mass, List<SpaceShip> spaceShips){
-        return null;
+    private List<SpaceShip> filterByMass(int minMass, int maxMass, List<SpaceShip> spaceShips){
+        return spaceShips.stream()
+                .filter(spaceShip -> spaceShip.getMass() >= minMass && spaceShip.getMass() <= maxMass)
+                .collect(Collectors.toList());
     }
 
     private List<SpaceShip> filterByLength(int length, List<SpaceShip> spaceShips){
