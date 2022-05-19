@@ -113,6 +113,8 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     private List<SpaceShip> filterAvailable(List<SpaceShip> spaceShips){
-        return null;
+        return spaceShips.stream()
+                .filter(SpaceShip::isAvailable)
+                .collect(Collectors.toList());
     }
 }
