@@ -1,6 +1,7 @@
 package com.codecool.spacer.service;
 
 import com.codecool.spacer.dao.UserDao;
+import com.codecool.spacer.model.SpaceShip;
 import com.codecool.spacer.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -32,5 +33,13 @@ public class UserService {
 
     public void deleteUser(int userId){
         userDao.deleteUser(userId);
+    }
+
+    public void addShipToUser(int userId, SpaceShip ship) {
+        userDao.addShipToUser(userId, ship);
+    }
+
+    public void removeShipFromUser(int userId, int shipId) {
+        userDao.removeShipFromUser(userId, shipId);
     }
 }
