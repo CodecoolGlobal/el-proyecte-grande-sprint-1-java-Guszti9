@@ -114,13 +114,13 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     @Override
-    public void editSpaceShip(int id, SpaceShip editSpaceShip) {
-
+    public void editSpaceShip(int id, SpaceShip spaceShip) {
+        spaceShips.stream().filter(s -> s.getId() == id).findFirst().ifPresent(s -> s.editSpaceShip(spaceShip));
     }
 
     @Override
     public void deleteSpaceShip(int id) {
-
+        spaceShips.stream().filter(s -> s.getId() == id).findFirst().ifPresent(spaceShips::remove);
     }
 
     @Override
