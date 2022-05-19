@@ -83,7 +83,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     @Override
     public void deleteSpaceShip(int id) {
-
+        spaceShips.stream().filter(s -> s.getId() == id).findFirst().ifPresent(s -> spaceShips.remove(s));
     }
 
     @Override
