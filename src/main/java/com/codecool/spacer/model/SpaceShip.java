@@ -108,58 +108,6 @@ public class SpaceShip {
         return isAvailable;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setWeapons(boolean weapons) {
-        this.weapons = weapons;
-    }
-
-    public void setMass(int mass) {
-        this.mass = mass;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public void setMaxCrew(int maxCrew) {
-        this.maxCrew = maxCrew;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public void setClassification(Classification classification) {
-        this.classification = classification;
-    }
-
-    public void setFuelType(FuelType fuelType) {
-        this.fuelType = fuelType;
-    }
-
-    public void setManufacturer(Manufacturer manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public void setAvailable(boolean available) {
-        isAvailable = available;
-    }
-
     public void editSpaceShip(SpaceShip spaceShip) {
         brand = spaceShip.getBrand();
         year = spaceShip.getYear();
