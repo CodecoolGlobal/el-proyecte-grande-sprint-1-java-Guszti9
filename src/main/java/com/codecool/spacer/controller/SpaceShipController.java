@@ -56,6 +56,5 @@ public class SpaceShipController {
     @PostMapping("api/spaceship/rent/{id}")
     public void rentSpaceShip(@PathVariable int id){
         spaceShipService.rentSpaceShip(id);
-
     }
 }

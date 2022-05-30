@@ -43,6 +43,7 @@ public class UserDaoMem implements UserDao {
     @Override
     public void deleteUser(int userId){
         allUsers.remove(allUsers.stream().filter(u -> u.getId() == userId).findFirst().get());
+
     }
 
     @Override
