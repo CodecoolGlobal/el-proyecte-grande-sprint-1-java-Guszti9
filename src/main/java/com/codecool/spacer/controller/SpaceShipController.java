@@ -6,9 +6,9 @@ import com.codecool.spacer.service.SpaceShipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class SpaceShipController {
     private SpaceShipService spaceShipService;
@@ -43,17 +43,17 @@ public class SpaceShipController {
         spaceShipService.addSpaceShips(spaceShips);
     }
 
-    @PutMapping("api/spaceship/edit/{id}")
+    @PutMapping("api/spaceship/{id}/edit")
     public void editSpaceShip(@PathVariable int id, @RequestBody SpaceShip spaceShip){
         spaceShipService.editSpaceShip(id, spaceShip);
     }
 
-    @DeleteMapping("api/spaceship/delete/{id}")
+    @DeleteMapping("api/spaceship/{id}/delete")
     public void deleteSpaceShip(@PathVariable int id){
         spaceShipService.deleteSpaceShip(id);
     }
 
-    @PostMapping("api/spaceship/rent/{id}")
+    @PostMapping("api/spaceship/{id}/rent")
     public void rentSpaceShip(@PathVariable int id){
         spaceShipService.rentSpaceShip(id);
     }

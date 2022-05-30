@@ -109,9 +109,12 @@ public class SpaceShip {
     }
 
     public void editSpaceShip(SpaceShip spaceShip) {
+        name = spaceShip.getName();
         brand = spaceShip.getBrand();
         year = spaceShip.getYear();
+        description = spaceShip.getDescription();
         weapons = spaceShip.getWeapons();
+        mass = spaceShip.getMass();
         length = spaceShip.getLength();
         maxCrew = spaceShip.getMaxCrew();
         price = spaceShip.getPrice();
