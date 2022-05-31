@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -35,4 +36,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#wrapper {
+  margin: auto;
+  width: 90%;
+  position: center;
+  border: 1px solid #02e7eb;
+  overflow: hidden; /* will contain if #first is longer than #second */
+}
+#user-picture {
+  width: 600px;
+  float:left; /* add this */
+}
+#user-details {
+  border: 1px solid #02e7eb;
+  float: right;
+  overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+body {
+  background-color: #282c34;
 }

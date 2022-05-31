@@ -1,13 +1,12 @@
 import UserDetails from "./userDetails";
+import UserPicture from "./userPicture";
 
 function userPage(){
     return (
         <body>
-            <div>
+            <div id={"wrapper"}>
+                <UserPicture/>
                 <UserDetails/>
-                <p>
-                    body content
-                </p>
             </div>
         </body>
     )

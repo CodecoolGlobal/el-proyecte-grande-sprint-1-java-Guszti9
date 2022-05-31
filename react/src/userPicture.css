@@ -1,0 +1,11 @@
+#user-picture {
+    -webkit-box-shadow: 0px 0px 15px 11px rgba(0,0,0,0.59);
+    box-shadow: 0px 0px 15px 11px rgba(0,0,0,0.59);
+    background: #3F9AFF;
+    width: 600px;
+    height: 300px;
+    padding: 70px;
+}
+body#tinymce {
+    background: #FFFFFF
+}
