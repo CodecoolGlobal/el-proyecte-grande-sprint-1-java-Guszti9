@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import ShipImage from "./shipImage";
 
 
 function VehicleDetails(props) {
@@ -12,15 +13,16 @@ function VehicleDetails(props) {
         then(result => setShip(result), (error) => console.log("error"));
     }
 
-    useEffect(() => {
+    useEffect( () => {
         fetchShip(props.id)
     }, [])
 
     if (ship) {
         return  (
-            <body>
-            {ship.name}
-            </body>
+            <div>
+                <p>{ship.name}</p>
+                <ShipImage image={ship.image}/>
+            </div>
         );
     }
 

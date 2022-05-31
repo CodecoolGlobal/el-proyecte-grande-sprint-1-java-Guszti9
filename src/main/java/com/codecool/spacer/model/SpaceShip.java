@@ -13,6 +13,7 @@ public class SpaceShip {
     private int id = idCounter++;
 
     private String name;
+    private String image;
     private String brand;
     private Integer year;
     private String description;
@@ -28,8 +29,9 @@ public class SpaceShip {
     private int userId;
     private Boolean isAvailable;
 
-    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, int userId) {
+    public SpaceShip(String name, String image, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, int userId) {
         this.name = name;
+        this.image = image;
         this.brand = brand;
         this.year = year;
         this.description = description;
@@ -54,6 +56,10 @@ public class SpaceShip {
 
     public String getName() {
         return name;
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public String getBrand() {
