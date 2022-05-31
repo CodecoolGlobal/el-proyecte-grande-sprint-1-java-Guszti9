@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import MainPage from "./mainPage";
+import Header from "./header";
 import React, {useEffect} from "react";
 
 function Ship(){
@@ -38,20 +38,8 @@ function Ship(){
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Ship />
-        </a>
-      </header>
+        <Header/>
+        <MainPage/>
     </div>
   );
 }
