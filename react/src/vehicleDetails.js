@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import ShipImage from "./shipImage";
+import ShipDescription from "./shipDescription";
 
 
 function VehicleDetails(props) {
@@ -22,6 +23,7 @@ function VehicleDetails(props) {
             <div>
                 <p>{ship.name}</p>
                 <ShipImage image={ship.image}/>
+                <ShipDescription description={ship.description}/>
             </div>
         );
     }
