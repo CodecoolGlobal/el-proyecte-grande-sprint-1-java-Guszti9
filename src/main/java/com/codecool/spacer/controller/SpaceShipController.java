@@ -18,6 +18,7 @@ public class SpaceShipController {
         this.spaceShipService = spaceShipService;
     }
 
+    @CrossOrigin
     @GetMapping("api/spaceship/{id}")
     public SpaceShip getSpaceShipById(@PathVariable int id){
         return spaceShipService.getSpaceShipById(id);
