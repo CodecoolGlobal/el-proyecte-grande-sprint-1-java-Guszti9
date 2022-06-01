@@ -1,10 +1,12 @@
+
 table.blueTable {
     border: 1px solid #02e7eb;
-    background-color: #EEEEEE;
+    background-color: #676666;
     width: 300px;
     height: 600px;
     text-align: center;
     border-collapse: collapse;
+    margin: 20px 20px 20px 20px;
 }
 table.blueTable td, table.blueTable th {
     border: 1px solid #5e9396;
@@ -12,22 +14,19 @@ table.blueTable td, table.blueTable th {
 }
 table.blueTable tbody td {
     font-size: 13px;
-    color: black;
+    color: #02e7eb;
 }
 table.blueTable tr:nth-child(even) {
-    background: #D0E4F5;
+    background: #3b3838;
 }
 table.blueTable thead {
-    background: #1C6EA4;
-    background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-    background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-    border-bottom: 2px solid #02e7eb;
+    background-color: #3b3838;
+    border-bottom: 1px solid #02e7eb;
 }
 table.blueTable thead th {
     font-size: 15px;
     font-weight: bold;
-    color: #000000;
+    color: #02e7eb;
     text-align: center;
     border-left: 2px solid #02e7eb;
 }

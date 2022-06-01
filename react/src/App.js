@@ -5,6 +5,7 @@ import React, {useEffect} from "react";
 import './App.css';
 import Footer from "./footer";
 import UserPage from "./userPage";
+import UserDetails from "./userDetails";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
         <Header/>
         <div className="inner-div">
             <NavBar/>
-            <MainPage/>
+            {/*<MainPage/>*/}
+            <UserPage/>
+            <Footer/>
         </div>
     </div>
   );

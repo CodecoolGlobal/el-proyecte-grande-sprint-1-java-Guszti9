@@ -2,6 +2,7 @@ import './userPage.css';
 import React, {useEffect} from "react";
 
 function GetUserDetails(props) {
+
     const [data, setData] = React.useState([]);
 
     const getData = () => {
@@ -21,13 +22,36 @@ function GetUserDetails(props) {
         getData();
     }, []);
 
+    console.log(data)
 
     return (
         <div id={"user-details"}>
             <table className="blueTable">
+                <thead>
+                    <th>
+                        {data.firstName} {data.lastName}
+                    </th>
+                </thead>
                 <tbody>
                 <tr>
-                    {data?.map(d => <td>{d.faceBook}</td>)}
+                    <td>
+                        {data.linkedIn}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        e-mail: {data.email}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        facebook: {data.faceBook}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        phone: {data.phoneNumber}
+                    </td>
                 </tr>
                 </tbody>
             </table>
