@@ -1,0 +1,31 @@
+.container{
+    border-style: solid;
+    border-color: #02e7eb;
+    border-width: 0.001vh;
+    margin: 0 10px 0 10px;
+    padding: 10px 15px 10px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-container.left{
+    margin-right: 40px;
+}
+
+.button-container.right{
+    margin-left: 40px;
+}
+
+.button-container.center{
+    margin-left: 63px;
+}
+
+.button.plus{
+    font-size: 50px;
+}
+
+.button.plus:hover{
+    background: #282c34;
+}
