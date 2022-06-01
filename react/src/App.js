@@ -2,7 +2,7 @@ import MainPage from "./mainPage";
 import NavBar from "./navBar";
 import Header from "./header";
 import React, {useEffect} from "react";
-import VehicleDetails from "./vehicleDetails";
+import VehicleDetails from "./vehicleDetails/vehicleDetails";
 import './App.css';
 import Footer from "./footer";
 import UserPage from "./userPage";
@@ -13,9 +13,8 @@ function App() {
         <Header/>
         <div className="inner-div">
             <NavBar/>
-            <MainPage/>
+            <VehicleDetails id={1}/>
         </div>
-        <VehicleDetails id={1}/>
     </div>
   );
 }
