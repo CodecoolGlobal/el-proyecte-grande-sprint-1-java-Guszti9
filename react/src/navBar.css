@@ -18,6 +18,10 @@
     margin-left: 40px;
 }
 
+.button-container.center{
+    margin-left: 63px;
+}
+
 .button.plus{
     font-size: 50px;
 }
