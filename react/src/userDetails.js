@@ -1,65 +1,39 @@
 import './userPage.css';
 import React, {useEffect} from "react";
 
-function GetUserDetails(){
+function GetUserDetails(props) {
     const [data, setData] = React.useState([]);
 
     const getData = () => {
-        fetch("http://localhost:8080/api/user/{id}", {
+        fetch(`http://localhost:8080/api/user/${props.id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
                 'Access-Control-Allow-Origin': 'http://localhost:8080'
             }
-        }).then(function (response){
+        }).then(function (response) {
             return response.json();
-        }).then(function (data){
-            console.log(data);
-            setData(data);
+        }).then(function (myResp) {
+            setData(myResp);
         });
     }
     useEffect(() => {
-        getData()
-    }, [])
-    return (
-        <div>
-            {data.map((d) => <td>{d.name}</td>)}
-        </div>
-    )
-}
+        getData();
+    }, []);
 
-function userDetails(){
+
     return (
         <div id={"user-details"}>
             <table className="blueTable">
-                <thead>
-                <tr>
-                    <th>UserName</th>
-                </tr>
-                </thead>
                 <tbody>
                 <tr>
-                    <GetUserDetails/>
-                </tr>
-                <tr>
-                    <td>cell1_2</td>
-                </tr>
-                <tr>
-                    <td>cell1_3</td>
-                </tr>
-                <tr>
-                    <td>cell1_4</td>
-                </tr>
-                <tr>
-                    <td>cell1_5</td>
-                </tr>
-                <tr>
-                    <td>cell1_6</td>
+                    {data?.map(d => <td>{d.faceBook}</td>)}
                 </tr>
                 </tbody>
             </table>
         </div>
+
     )
 }
 
-export default userDetails;
+export default GetUserDetails;
