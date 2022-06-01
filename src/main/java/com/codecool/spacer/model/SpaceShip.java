@@ -6,14 +6,14 @@ import com.codecool.spacer.model.shipdata.FuelType;
 import com.codecool.spacer.model.shipdata.Manufacturer;
 
 import java.math.BigDecimal;
-import java.util.GregorianCalendar;
+import java.util.List;
 
 public class SpaceShip {
     private static int idCounter = 0;
     private int id = idCounter++;
 
     private String name;
-    private String image;
+    private List<String> image;
     private String brand;
     private Integer year;
     private String description;
@@ -29,7 +29,7 @@ public class SpaceShip {
     private int userId;
     private Boolean isAvailable;
 
-    public SpaceShip(String name, String image, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, int userId) {
+    public SpaceShip(String name, List<String> image, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, int userId) {
         this.name = name;
         this.image = image;
         this.brand = brand;
@@ -58,7 +58,7 @@ public class SpaceShip {
         return name;
     }
 
-    public String getImage() {
+    public List<String> getImage() {
         return image;
     }
 

@@ -1,5 +1,14 @@
-function ShipImage(props) {
+import {useEffect, useState} from "react";
 
+function ShipImage(props) {
+    const [shipImage, setShipImage] = useState([]);
+
+    useEffect( () => {
+        console.log(props.image)
+        if (props.image !== undefined) {
+            setShipImage(props.image);
+        }
+    }, [props])
 
 
     return (
@@ -8,7 +17,7 @@ function ShipImage(props) {
                 <img src="shipDetailsImages/leftArrow.png"/>
             </div>
             <div className="ship-picture">
-                <img src={props.image} />
+                <img src={shipImage[0]} />
             </div>
             <div className="right-arrow arrow">
                 <img src="shipDetailsImages/rightArrow.png"/>
