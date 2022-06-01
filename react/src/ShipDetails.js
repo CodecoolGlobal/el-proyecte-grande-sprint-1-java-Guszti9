@@ -1,18 +1,19 @@
 import {useEffect, useState} from "react";
 
 function ShipDetails(props) {
-    const [userName, setUserName] = useState("none");
+    const [userName, setUserName] = useState();
 
     const fetchUserName = id => {
-        fetch(`http://localhost:8080/api/user/${id}`).
-        then(result => result.json()).
-        then(result => {
-            setUserName(result.firstName + " " + result.lastName);
-        }, (error) => console.log("error"));
+        if (id !== undefined) {
+            fetch(`http://localhost:8080/api/user/${id}`)
+                .then(result => result.json())
+                .then(result => {
+                    setUserName(result.firstName + " " + result.lastName);
+                }, (error) => console.log("error"));
+        }
     }
 
     useEffect( () => {
-        console.log("1");
         fetchUserName(props.ship.userId);
     }, [props]);
 
