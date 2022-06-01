@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 
 function ShipImage(props) {
     const [shipImage, setShipImage] = useState([]);
+    const [imageInd, setImageInd] = useState(0);
 
     useEffect( () => {
         console.log(props.image)
@@ -10,17 +11,28 @@ function ShipImage(props) {
         }
     }, [props])
 
+    function getLeftPicture() {
+        if (imageInd !== 0) {
+            setImageInd(imageInd - 1);
+        }
+    }
+
+    function getRightPicture() {
+        if (imageInd < shipImage.length - 1) {
+            setImageInd(imageInd + 1);
+        }
+    }
 
     return (
         <div className="image-container">
             <div className="left-arrow arrow">
-                <img src="shipDetailsImages/leftArrow.png"/>
+                <img onClick={getLeftPicture} src="shipDetailsImages/leftArrow.png"/>
             </div>
             <div className="ship-picture">
-                <img src={shipImage[0]} />
+                <img src={shipImage[imageInd]} />
             </div>
             <div className="right-arrow arrow">
-                <img src="shipDetailsImages/rightArrow.png"/>
+                <img onClick={getRightPicture} src="shipDetailsImages/rightArrow.png"/>
             </div>
         </div>
     );

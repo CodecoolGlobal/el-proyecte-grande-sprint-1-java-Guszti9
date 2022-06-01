@@ -63,6 +63,10 @@
     text-align: center;
 }
 
+.ship-picture img{
+    height: 60vh;
+}
+
 .right-arrow{
     grid-area: arrow-right;
 }
