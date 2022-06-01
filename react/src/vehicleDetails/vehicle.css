@@ -40,6 +40,42 @@
     border: 2px #02e7eb solid;
 }
 
+.image-container {
+    display: grid;
+    margin: 2.5% 5%;
+    grid-template-columns: 10% 75% 10%;
+    grid-template-rows:  44% 10% 44%;
+    grid-template-areas:
+            ". picture ."
+            "arrow-left picture arrow-right"
+            ". picture .";
+    grid-column-gap: 2%;
+    grid-row-gap: 1%;
+
+}
+
+.left-arrow{
+    grid-area: arrow-left;
+}
+
+.ship-picture{
+    grid-area: picture;
+    text-align: center;
+}
+
+.right-arrow{
+    grid-area: arrow-right;
+}
+
+.arrow {
+    text-align: center;
+    cursor: pointer;
+}
+
+.arrow img{
+    width: 100%;
+}
+
 #ship-name {
     font-family: Expansiva;
 }
