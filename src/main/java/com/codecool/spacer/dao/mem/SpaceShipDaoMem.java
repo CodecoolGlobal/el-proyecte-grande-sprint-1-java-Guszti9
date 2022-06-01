@@ -38,8 +38,6 @@ public class SpaceShipDaoMem implements SpaceShipDao {
                         || i.getWeapons() == filter.getWeapons())
                 .filter(i -> filter.getMinMass() == null && filter.getMaxMass() == null
                         || i.getMass() >= filter.getMinMass() && i.getMass() <= filter.getMaxMass())
-                .filter(i -> filter.getMinLength() == null && filter.getMaxLength() == null
-                        || i.getLength() >= filter.getMaxLength() && i.getLength() <= filter.getMaxLength())
                 .filter(i -> filter.getMaxCrew() == null
                         || i.getMaxCrew().equals(filter.getMaxCrew()))
                 .filter(i -> filter.getMinPrice() == null && filter.getMaxPrice() == null
