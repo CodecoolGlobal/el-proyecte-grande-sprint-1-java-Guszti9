@@ -1,45 +1,153 @@
 import './mainPage.css';
+import {useState} from "react";
+
+function YearSelect(){
+    const [year, setYear] = useState(["Year", "< 2500", "2500-3000", "3000-3500", "3500-4000"])
+    const yearList = year.map(Year => Year)
+    const handleYearChange = (e) => console.log((yearList[e.target.value]))
+
+    return (
+        <div className="select">
+        < select
+            onChange={e => handleYearChange(e)}
+            className="year" >
+            {
+                yearList.map((address, key) => <option key={key} value={key}>{address}</option>)
+            }
+        </select >
+        </div>
+    )
+}
+
+function WeaponSelect(){
+    const [weapon, setWeapons] = useState(["Weapons", "WEAPONIZED", "NO WEAPONS"])
+    const weaponList = weapon.map(Weapon => Weapon)
+    const handleWeaponsChange = (e) => console.log((weaponList[e.target.value]))
+
+    return (
+        <div className="select">
+            < select
+                onChange={e => handleWeaponsChange(e)}
+                className="weapon" >
+                {
+                    weaponList.map((address, key) => <option key={key} value={key}>{address}</option>)
+                }
+            </select >
+        </div>
+    )
+}
+
+function MassSelect(){
+    const [mass, setMass] = useState(["Mass", "< 50.000", "50.000-100.000", "100.000 <"])
+    const massList = mass.map(Mass => Mass)
+    const handleMassChange = (e) => console.log((massList[e.target.value]))
+
+    return (
+        <div className="select">
+            < select
+                onChange={e => handleMassChange(e)}
+                className="mass" >
+                {
+                    massList.map((address, key) => <option key={key} value={key}>{address}</option>)
+                }
+            </select >
+        </div>
+    )
+}
+
+function PriceSelect(){
+    const [price, setPrice] = useState(["Price", "< 100.000", "100.000-500.000", "500.000-1.000.000", "1.000.000 <"])
+    const priceList = price.map(Price => Price)
+    const handlePriceChange = (e) => console.log((priceList[e.target.value]))
+
+    return (
+        <div className="select">
+            < select
+                onChange={e => handlePriceChange(e)}
+                className="price" >
+                {
+                    priceList.map((address, key) => <option key={key} value={key}>{address}</option>)
+                }
+            </select >
+        </div>
+    )
+}
+
+function ClassSelect(){
+    const [classification, setClassification] = useState(["Classification", "COMBAT", "TRANSPORT", "EXPLORATION", "INDUSTRIAL", "SUPPORT", "COMPETITION", "GROUND", "MULTI"])
+    const classificationList = classification.map(Classification => Classification)
+    const handleClassificationChange = (e) => console.log((classificationList[e.target.value]))
+
+    return (
+        <div className="select">
+            < select
+                onChange={e => handleClassificationChange(e)}
+                className="classification" >
+                {
+                    classificationList.map((address, key) => <option key={key} value={key}>{address}</option>)
+                }
+            </select >
+        </div>
+    )
+}
+
+function FuelTypeSelect(){
+    const [fuelType, setFuelType] = useState(["Fuel Type", "DIESEL", "GASOLINE", "ELECTRIC", "NUCLEAR"])
+    const fuelTypeList = fuelType.map(FuelType => FuelType)
+    const handleFuelTypeChange = (e) => console.log((fuelTypeList[e.target.value]))
+
+    return (
+        <div className="select">
+            < select
+                onChange={e => handleFuelTypeChange(e)}
+                className="fuel-type" >
+                {
+                    fuelTypeList.map((address, key) => <option key={key} value={key}>{address}</option>)
+                }
+            </select >
+        </div>
+    )
+}
+
+function ManufacturerSelect(){
+    const [manufacturer, setManufacturer] = useState(["Manufacturer", "AEGIS DYNAMICS", "ANVIL AEROSPACE", "CRUSADER INDUSTRIES", "DRAKE INTERPLANETARY", "GREYCAT INDUSTRIAL", "TUMBRIL"])
+    const manufacturerList = manufacturer.map(Manufacturer => Manufacturer)
+    const handleManufacturerChange = (e) => console.log((manufacturerList[e.target.value]))
+
+    return (
+        <div className="select">
+            < select
+                onChange={e => handleManufacturerChange(e)}
+                className="manufacturer" >
+                {
+                    manufacturerList.map((address, key) => <option key={key} value={key}>{address}</option>)
+                }
+            </select >
+        </div>
+    )
+}
+
+function SearchContainer(){
+    return (
+        <div className="container search">
+            <div className="upper-bar">
+                <YearSelect/>
+                <WeaponSelect/>
+                <MassSelect/>
+                <PriceSelect/>
+                <ClassSelect/>
+                <FuelTypeSelect/>
+                <ManufacturerSelect/>
+            </div>
+        </div>
+    )
+}
 
 
 function MainPage(){
     return (
         <div>
-            <div className="container search">
-                <div className="upper-bar">
-                    <div className="select">
-                        <select name="year" id="year">
-                            <option value="choose-year">Choose year...</option>
-                            <option value="less-than-2500">2500-</option>
-                            <option value="2500-3000">2500-3000</option>
-                            <option value="3000-3500">3000-3500</option>
-                            <option value="3500-4000">3500-4000</option>
-                            <option value="more-than-4000">4000+</option>
-                        </select>
-                        <div className="select_arrow">
-                        </div>
-                        <select name="weapons" id="weapons">
-                            <option value="choose-weapons">Weapons...</option>
-                            <option value="weapons-available">Weaponized</option>
-                            <option value="weapons-unavailable">No Weapons</option>
-                        </select>
-                        <select name="mass" id="mass">
-                            <option value="choose-year">Choose mass...</option>
-                            <option value="less-than-50000">50.000-</option>
-                            <option value="50000-100000">50.000-100.000</option>
-                            <option value="more-than-100000">100.000+</option>
-                        </select>
-                        <select name="max-crew" id="max-crew">
-                            <option value="choose-year">Maximum crew...</option>
-                            <option value="2">2</option>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                        </select>
-                    </div>
-                </div>
-                <div className="lower-bar">
-
-                </div>
-            </div>
+            <SearchContainer/>
             <div className="container result">
                 <p>hapa</p>
             </div>
