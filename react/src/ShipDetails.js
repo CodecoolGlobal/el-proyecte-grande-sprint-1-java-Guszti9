@@ -18,48 +18,48 @@ function ShipDetails(props) {
     }, [props]);
 
     return (
-        <div>
-            <div>
-                <div><p>Brand:</p></div>
-                <div><p>{props.ship.brand}</p></div>
-            </div>
-            <div>
-                <div><p>Year:</p></div>
-                <div><p>{props.ship.year}</p></div>
-            </div>
-            <div>
-                <div><p>Mass: </p></div>
-                <div><p>{props.ship.mass}</p></div>
-            </div>
-            <div>
-                <div><p>Length: </p></div>
-                <div><p>{props.ship.length}</p></div>
-            </div>
-            <div>
-                <div><p>Max Crew: </p></div>
-                <div><p>{props.ship.maxCrew}</p></div>
-            </div>
-            <div>
-                <div><p>Price: </p></div>
-                <div><p>{props.ship.price}</p></div>
-            </div>
-            <div>
-                <div><p>Classification: </p></div>
-                <div><p>{props.ship.classification}</p></div>
-            </div>
-            <div>
-                <div><p>Fuel Type: </p></div>
-                <div><p>{props.ship.fuelType}</p></div>
-            </div>
-            <div>
-                <div><p>Manufacturer: </p></div>
-                <div><p>{props.ship.manufacturer}</p></div>
-            </div>
-            <div>
-                <div><p>User Name: </p></div>
-                <div><p>{userName}</p></div>
-            </div>
-        </div>
+        <table>
+            <tr>
+                <th><p>Brand:</p></th>
+                <th><p>{props.ship.brand}</p></th>
+            </tr>
+            <tr>
+                <th><p>Year:</p></th>
+                <th><p>{props.ship.year}</p></th>
+            </tr>
+            <tr>
+                <th><p>Mass: </p></th>
+                <th><p>{props.ship.mass}</p></th>
+            </tr>
+            <tr>
+                <th><p>Length: </p></th>
+                <th><p>{props.ship.length}</p></th>
+            </tr>
+            <tr>
+                <th><p>Max Crew: </p></th>
+                <th><p>{props.ship.maxCrew}</p></th>
+            </tr>
+            <tr>
+                <th><p>Price: </p></th>
+                <th><p>{props.ship.price}</p></th>
+            </tr>
+            <tr>
+                <th><p>Classification: </p></th>
+                <th><p>{props.ship.classification}</p></th>
+            </tr>
+            <tr>
+                <th><p>Fuel Type: </p></th>
+                <th><p>{props.ship.fuelType}</p></th>
+            </tr>
+            <tr>
+                <th><p>Manufacturer: </p></th>
+                <th><p>{props.ship.manufacturer}</p></th>
+            </tr>
+            <tr>
+                <th><p>User Name: </p></th>
+                <th><p>{userName}</p></th>
+            </tr>
+        </table>
     );
 }
 
