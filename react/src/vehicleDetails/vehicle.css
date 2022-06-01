@@ -1,31 +1,49 @@
+@font-face {
+    font-family: Expansiva;
+    src: url(../font/Expansiva.otf);
+    font-weight:200;
+}
+
 .vehicle-body {
+    margin: 2.5%;
     color:#02e7eb;
     display: grid;
-    grid-template-columns: 70% 25%;
+    grid-template-columns: 70% 29%;
     grid-template-rows: auto auto;
     grid-template-areas:
             "picture details"
             "description details";
 
 
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
+    grid-column-gap: 1%;
+    grid-row-gap: 2%;
 }
 
 .vehicle-picture-block {
     grid-area: picture;
+    text-align: center;
 
     border: 2px #02e7eb solid;
 }
 
 .vehicle-description-block {
     grid-area: description;
+    padding: 20px;
 
     border: 2px #02e7eb solid;
 }
 
 .vehicle-details-block {
     grid-area: details;
+    padding: 20px;
 
     border: 2px #02e7eb solid;
+}
+
+#ship-name {
+    font-family: Expansiva;
+}
+
+th {
+    padding: 0 10px;
 }

@@ -21,44 +21,44 @@ function ShipDetails(props) {
         <table>
             <tbody>
                 <tr>
-                    <th><p>Brand:</p></th>
-                    <th><p>{props.ship.brand}</p></th>
+                    <th align="left"><p>Brand:</p></th>
+                    <th align="left"><p>{props.ship.brand}</p></th>
                 </tr>
                 <tr>
-                    <th><p>Year:</p></th>
-                    <th><p>{props.ship.year}</p></th>
+                    <th align="left"><p>Year:</p></th>
+                    <th align="left"><p>{props.ship.year}</p></th>
                 </tr>
                 <tr>
-                    <th><p>Mass: </p></th>
-                    <th><p>{props.ship.mass}</p></th>
+                    <th align="left"><p>Mass: </p></th>
+                    <th align="left"><p>{props.ship.mass}</p></th>
                 </tr>
                 <tr>
-                    <th><p>Length: </p></th>
-                    <th><p>{props.ship.length}</p></th>
+                    <th align="left"><p>Length: </p></th>
+                    <th align="left"><p>{props.ship.length}</p></th>
                 </tr>
                 <tr>
-                    <th><p>Max Crew: </p></th>
-                    <th><p>{props.ship.maxCrew}</p></th>
+                    <th align="left"><p>Max Crew: </p></th>
+                    <th align="left"><p>{props.ship.maxCrew}</p></th>
                 </tr>
                 <tr>
-                    <th><p>Price: </p></th>
-                    <th><p>{props.ship.price}</p></th>
+                    <th align="left"><p>Price: </p></th>
+                    <th align="left"><p>{props.ship.price}</p></th>
                 </tr>
                 <tr>
-                    <th><p>Classification: </p></th>
-                    <th><p>{props.ship.classification}</p></th>
+                    <th align="left"><p>Classification: </p></th>
+                    <th align="left"><p>{props.ship.classification}</p></th>
                 </tr>
                 <tr>
-                    <th><p>Fuel Type: </p></th>
-                    <th><p>{props.ship.fuelType}</p></th>
+                    <th align="left"><p>Fuel Type: </p></th>
+                    <th align="left"><p>{props.ship.fuelType}</p></th>
                 </tr>
                 <tr>
-                    <th><p>Manufacturer: </p></th>
-                    <th><p>{props.ship.manufacturer}</p></th>
+                    <th align="left"><p>Manufacturer: </p></th>
+                    <th align="left"><p>{props.ship.manufacturer}</p></th>
                 </tr>
                 <tr>
-                    <th><p>User Name: </p></th>
-                    <th><p>{userName}</p></th>
+                    <th align="left"><p>User Name: </p></th>
+                    <th align="left"><p>{userName}</p></th>
                 </tr>
             </tbody>
         </table>

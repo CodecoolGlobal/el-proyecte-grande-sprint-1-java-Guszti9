@@ -22,7 +22,7 @@ function VehicleDetails(props) {
         return  (
             <div className="vehicle-body">
                 <div className="vehicle-picture-block">
-                    <p>{ship.name}</p>
+                    <h3 id="ship-name">{ship.name}</h3>
                     <ShipImage image={ship.image}/>
                 </div>
                  <div className="vehicle-description-block">
