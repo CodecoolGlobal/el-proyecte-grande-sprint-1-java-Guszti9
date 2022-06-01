@@ -1,6 +1,6 @@
+import './header.css';
 import logo from "./images/spacer_logo.png";
 import companyName from "./images/spacer_name.png";
-import './header.css';
 
 function Header(){
     return (
