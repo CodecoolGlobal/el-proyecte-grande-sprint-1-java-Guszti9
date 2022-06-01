@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import ShipImage from "./shipImage";
 import ShipDescription from "./shipDescription";
 import ShipDetails from "./ShipDetails";
+import "./vehicle.css"
 
 
 function VehicleDetails(props) {
@@ -19,11 +20,17 @@ function VehicleDetails(props) {
 
     if (ship) {
         return  (
-            <div>
-                <p>{ship.name}</p>
-                <ShipImage image={ship.image}/>
-                <ShipDescription description={ship.description}/>
-                <ShipDetails ship={ship} />
+            <div className="vehicle-body">
+                <div className="vehicle-picture-block">
+                    <p>{ship.name}</p>
+                    <ShipImage image={ship.image}/>
+                </div>
+                 <div className="vehicle-description-block">
+                    <ShipDescription description={ship.description}/>
+                 </div>
+                <div className="vehicle-details-block">
+                    <ShipDetails ship={ship} />
+                </div>
             </div>
         );
     }
