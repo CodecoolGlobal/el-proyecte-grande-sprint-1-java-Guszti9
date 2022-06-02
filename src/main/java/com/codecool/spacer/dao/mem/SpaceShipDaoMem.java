@@ -32,8 +32,8 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     @Override
     public List<SpaceShip> filterSpaceShips(Filter filter) {
         return spaceShips.stream()
-                .filter(i -> filter.getYear() == null
-                        || i.getYear() >= filter.getYear())
+                .filter(i -> filter.getMinYear() == null && filter.getMaxYear() == null
+                        || i.getYear() >= filter.getMinYear() && i.getYear() <= filter.getMaxYear())
                 .filter(i -> filter.getWeapons() == null
                         || i.getWeapons() == filter.getWeapons())
                 .filter(i -> filter.getMinMass() == null && filter.getMaxMass() == null

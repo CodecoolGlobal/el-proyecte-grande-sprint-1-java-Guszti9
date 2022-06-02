@@ -7,28 +7,26 @@ import com.codecool.spacer.model.shipdata.Manufacturer;
 import java.math.BigDecimal;
 
 public class Filter {
-    private Integer year;
-    private Boolean weapons;
-    private Integer minMass;
-    private Integer maxMass;
-    private Integer minLength;
-    private Integer maxLength;
-    private Integer maxCrew;
-    private BigDecimal minPrice;
-    private BigDecimal maxPrice;
-    private Classification classification;
-    private FuelType fuelType;
-    private Manufacturer manufacturer;
-    private Integer userId;
-    private Boolean isAvailable;
+    private final Integer minYear;
+    private final Integer maxYear;
+    private final Boolean weapons;
+    private final Integer minMass;
+    private final Integer maxMass;
+    private final Integer maxCrew;
+    private final BigDecimal minPrice;
+    private final BigDecimal maxPrice;
+    private final Classification classification;
+    private final FuelType fuelType;
+    private final Manufacturer manufacturer;
+    private final Integer userId;
+    private final Boolean isAvailable;
 
-    public Filter(Integer year, Boolean weapons, Integer minMass, Integer maxMass, Integer minLength, Integer maxLength, Integer maxCrew, BigDecimal minPrice, BigDecimal maxPrice, Classification classification, FuelType fuelType, Manufacturer manufacturer, Integer userId, Boolean isAvailable) {
-        this.year = year;
+    public Filter(Integer minYear, Integer maxYear, Boolean weapons, Integer minMass, Integer maxMass, Integer maxCrew, BigDecimal minPrice, BigDecimal maxPrice, Classification classification, FuelType fuelType, Manufacturer manufacturer, Integer userId, Boolean isAvailable) {
+        this.minYear = minYear;
+        this.maxYear = maxYear;
         this.weapons = weapons;
         this.minMass = minMass;
         this.maxMass = maxMass;
-        this.minLength = minLength;
-        this.maxLength = maxLength;
         this.maxCrew = maxCrew;
         this.minPrice = minPrice;
         this.maxPrice = maxPrice;
@@ -39,9 +37,11 @@ public class Filter {
         this.isAvailable = isAvailable;
     }
 
-    public Integer getYear() {
-        return year;
+    public Integer getMinYear() {
+        return minYear;
     }
+
+    public Integer getMaxYear(){ return maxYear;}
 
     public Boolean getWeapons() {
         return weapons;
@@ -53,14 +53,6 @@ public class Filter {
 
     public Integer getMaxMass(){
         return maxMass;
-    }
-
-    public Integer getMinLength() {
-        return minLength;
-    }
-
-    public Integer getMaxLength(){
-        return maxLength;
     }
 
     public Integer getMaxCrew() {
