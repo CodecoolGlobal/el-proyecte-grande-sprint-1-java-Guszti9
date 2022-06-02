@@ -3,7 +3,7 @@ import GetUserDetails from "./userDetails";
 import UserAdvertisements from "./userAdvertisements";
 
 
-function userPage(){
+function UserPage(){
     return (
         <div id={"wrapper"}>
             <UserPicture/>
@@ -15,4 +15,4 @@ function userPage(){
     )
 }
 
-export default userPage;
+export default UserPage;

@@ -12,8 +12,8 @@ function App() {
         <Header/>
         <div className="inner-div">
             <NavBar/>
-            {/*<MainPage/>*/}
-            <UserPage/>
+            <MainPage/>
+            {/*<UserPage/>*/}
             <Footer/>
         </div>
     </div>
