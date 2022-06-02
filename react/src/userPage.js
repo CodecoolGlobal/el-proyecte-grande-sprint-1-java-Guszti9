@@ -7,7 +7,7 @@ function userPage(){
     return (
         <div id={"wrapper"}>
             <UserPicture/>
-            <GetUserDetails id={1}/>
+            <GetUserDetails id={0}/>
             <div id="advertisement-box">
                 <UserAdvertisements id={0}/>
             </div>

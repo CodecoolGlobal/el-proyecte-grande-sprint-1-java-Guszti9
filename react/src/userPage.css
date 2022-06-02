@@ -59,7 +59,7 @@ table.blueTable tfoot .links a{
 
 #advertisement-box {
     display: flex;
-    padding: 2% 12% 2%;
+    padding: 2% 7% 2%;
     border: 1px solid #02e7eb;
     justify-content: center;
     flex-wrap: wrap;
