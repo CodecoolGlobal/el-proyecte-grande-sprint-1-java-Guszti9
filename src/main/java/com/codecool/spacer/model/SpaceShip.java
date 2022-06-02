@@ -6,6 +6,7 @@ import com.codecool.spacer.model.shipdata.FuelType;
 import com.codecool.spacer.model.shipdata.Manufacturer;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 
 public class SpaceShip {
@@ -28,7 +29,9 @@ public class SpaceShip {
     private int userId;
     private Boolean isAvailable;
 
-    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, int userId) {
+    private List<String> image;
+
+    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, int userId, List<String> image) {
         this.name = name;
         this.brand = brand;
         this.year = year;
@@ -41,6 +44,7 @@ public class SpaceShip {
         this.classification = classification;
         this.fuelType = fuelType;
         this.manufacturer = manufacturer;
+        this.image = image;
         this.shipCalendar = new ShipCalendar(id);
         this.userId = userId;
         this.isAvailable = true;
@@ -106,6 +110,10 @@ public class SpaceShip {
 
     public Boolean isAvailable() {
         return isAvailable;
+    }
+
+    public List<String> getImage() {
+        return image;
     }
 
     public void editSpaceShip(SpaceShip spaceShip) {
