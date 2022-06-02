@@ -3,25 +3,22 @@ import {useState} from "react";
 
 function ShipCalendar(props) {
     const [value, onChange] = useState(null);
-    const [fromDate, setFromDate] = useState(null);
-    const [toDate, setToDate] = useState(null)
+    const [type, setType] = useState("null")
 
     const onClick = date => {
-        if (fromDate === null) {
-            setFromDate(date);
-        } else if (toDate !== null) {
-            setToDate(null);
-            setFromDate(date);
-        } else {
-            setToDate(date);
-        }
-
-        if (toDate !== null && fromDate !== null ) {
-            let interval = [toDate, fromDate]
-            onChange(interval)
-            console.log(value);
+        if (type === "null") {
+            onChange(date);
+            setType("date");
+        } else if (type === "date") {
+            if (date < value) {
+                onChange([date, new Date(value.setDate(value.getDate() + 1))]);
+            } else {
+                onChange([value, new Date(date.setDate(date.getDate() + 1))]);
+            }
+            setType("interval");
         } else {
             onChange(date);
+            setType("date");
         }
     }
 
