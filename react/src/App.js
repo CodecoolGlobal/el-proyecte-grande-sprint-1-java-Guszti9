@@ -1,4 +1,4 @@
-import MainPage from "./mainPage";
+import MainPage from "./main_page/mainPage";
 import NavBar from "./navBar";
 import Header from "./header";
 import React, {useEffect} from "react";

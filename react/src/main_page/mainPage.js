@@ -1,5 +1,6 @@
 import './mainPage.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {convertFunctions} from "./convertFunctions";
 
 async function apiPost(url, payload) {
     let response = await fetch(url, {
@@ -11,7 +12,6 @@ async function apiPost(url, payload) {
     });
     if (response.ok) {
         let data = response.json()
-        console.log(data)
         return data;
     }
 }
@@ -20,117 +20,17 @@ async function filter(year, weapons, mass, price, classification, fuelType, manu
     const payLoad = {
         minYear: year ? year[0] : null,
         maxYear: year ? year[1] : null,
-        weapons: weapons,
+        weapons: weapons ? weapons : null,
         minMass: mass ? mass[0] : null,
         maxMass: mass ? mass[1] : null,
         minPrice: price ? price[0] : null,
         maxPrice: price ? price[1] : null,
-        classification: classification,
-        fuelType: fuelType,
-        manufacturer: manufacturer};
+        classification: classification ? classification : null,
+        fuelType: fuelType ? fuelType : null,
+        manufacturer: manufacturer ? manufacturer : null};
     return await apiPost("http://localhost:8080/api/spaceship/filter", payLoad);
 }
 
-function convertYear(year){
-    let filterReadyYear;
-    let splitYear;
-    if (year.length === 0){
-        return null;
-    }
-    if (year.includes("<")){
-        splitYear = year.split(" ");
-        if (splitYear[0] === "<"){
-            filterReadyYear = [0, parseInt(splitYear[1])]
-        } else {
-            filterReadyYear = [parseInt(splitYear[0]), 10000]
-        }
-    } else {
-        splitYear = year.split("-");
-        filterReadyYear = [parseInt(splitYear[0]), parseInt(splitYear[1])]
-    }
-    return filterReadyYear;
-}
-
-function convertWeapons(weapons){
-    let filterReadyWeapons;
-    if (weapons.length === 0){
-        return null;
-    }
-    if (weapons === "WEAPONIZED"){
-        filterReadyWeapons = true;
-    } else {
-        filterReadyWeapons = false;
-    }
-    return filterReadyWeapons;
-}
-
-function convertMass(mass){
-    let filterReadyMass;
-    let splitMass;
-    if (mass.length === 0){
-        return null;
-    }
-    if (mass.includes("<")){
-        splitMass = mass.split(" ");
-        if (splitMass[0] === "<"){
-            filterReadyMass = [0, parseInt(splitMass[1].split(".").join(""))]
-        } else {
-            filterReadyMass = [parseInt(splitMass[0].split(".").join("")), 1000000]
-        }
-    } else {
-        splitMass = mass.split("-");
-        filterReadyMass = [parseInt(splitMass[0].split(".").join("")), parseInt(splitMass[1].split(".").join(""))]
-    }
-    return filterReadyMass;
-}
-
-function convertPrice(price){
-    let filterReadyPrice;
-    let splitPrice;
-    if (price.length === 0){
-        return null;
-    }
-    if (price.includes("<")){
-        splitPrice = price.split(" ");
-        if (splitPrice[0] === "<"){
-            filterReadyPrice = [0, parseInt(splitPrice[1].split(".").join(""))]
-        } else {
-            filterReadyPrice = [parseInt(splitPrice[0].split(".").join("")), 10000000]
-        }
-    } else {
-        splitPrice = price.split("-");
-        filterReadyPrice = [parseInt(splitPrice[0].split(".").join("")), parseInt(splitPrice[1].split(".").join(""))]
-    }
-    return filterReadyPrice;
-}
-
-function convertClassification(classification){
-    if (classification.length === 0){
-        return null;
-    }
-    return classification;
-}
-
-function convertFuelType(fuelType){
-    if (fuelType.length === 0){
-        return null;
-    }
-    return fuelType;
-}
-
-function convertManufacturer(manufacturer){
-    let filterReadyManufacturer;
-    let splitManufacturer = manufacturer.split(" ")
-    if (manufacturer.length === 0){
-        return null;
-    }
-    if (splitManufacturer.length === 1){
-        filterReadyManufacturer = splitManufacturer[0];
-    } else {
-        filterReadyManufacturer = splitManufacturer.join("_");
-    }
-    return filterReadyManufacturer;
-}
 
 function YearSelect({filter}){
     const [year, setYear] = useState(["Year", "< 2500", "2500-3000", "3000-3500", "3500-4000", "4000 <"])
@@ -258,7 +158,7 @@ function ManufacturerSelect({filter}){
     )
 }
 
-function SearchContainer(){
+function SearchContainer() {
     const [year, setYear] = useState("");
     const [weapons, setWeapons] = useState("");
     const [mass, setMass] = useState("");
@@ -268,33 +168,45 @@ function SearchContainer(){
     const [manufacturer, setManufacturer] = useState("");
     const [filteredShips, setFilteredShips] = useState([]);
 
-    let yearToFilter = convertYear(year);
-    let weaponsToFilter = convertWeapons(weapons);
-    let massToFilter = convertMass(mass);
-    let priceToFilter = convertPrice(price);
-    let classificationToFilter = convertClassification(classification);
-    let fuelTypeToFilter = convertFuelType(fuelType);
-    let manufacturerToFilter = convertManufacturer(manufacturer);
+    let yearToFilter = convertFunctions.convertYear(year);
+    let weaponsToFilter = convertFunctions.convertWeapons(weapons);
+    let massToFilter = convertFunctions.convertMass(mass);
+    let priceToFilter = convertFunctions.convertPrice(price);
+    let classificationToFilter = convertFunctions.convertClassification(classification);
+    let fuelTypeToFilter = convertFunctions.convertFuelType(fuelType);
+    let manufacturerToFilter = convertFunctions.convertManufacturer(manufacturer);
 
-    filter(yearToFilter, weaponsToFilter, massToFilter, priceToFilter, classificationToFilter, fuelTypeToFilter, manufacturerToFilter).then(getResult);
+    useEffect(() => {
+        filter(yearToFilter, weaponsToFilter, massToFilter, priceToFilter, classificationToFilter, fuelTypeToFilter, manufacturerToFilter).then(getResult);
+    }, [year, weapons, mass, price, classification, fuelType, manufacturer])
 
-    function getResult(data){
+    function getResult(data) {
         setFilteredShips(data);
     }
 
     return (
-        <div className="container search">
-            <div className="upper-bar">
-                <YearSelect filter={setYear}/>
-                <WeaponSelect filter={setWeapons}/>
-                <MassSelect filter={setMass}/>
-                <PriceSelect filter={setPrice}/>
-                <ClassSelect filter={setClassification}/>
-                <FuelTypeSelect filter={setFuelType}/>
-                <ManufacturerSelect filter={setManufacturer}/>
+        <div>
+            <div className="container search">
+                <div className="upper-bar">
+                    <YearSelect filter={setYear}/>
+                    <WeaponSelect filter={setWeapons}/>
+                    <MassSelect filter={setMass}/>
+                    <PriceSelect filter={setPrice}/>
+                    <ClassSelect filter={setClassification}/>
+                    <FuelTypeSelect filter={setFuelType}/>
+                    <ManufacturerSelect filter={setManufacturer}/>
+                </div>
             </div>
+            <ResultContainer result={filteredShips}/>
+        </div>
+    )
+}
+
+function ResultContainer({result}){
+    return(
+        <div className="container result">
             <div>
-                {filteredShips?.map((r) => <p>{r.name}</p>)}
+                {result?.map((r, index) => <p key={index}>{r.name}</p>)}
             </div>
         </div>
     )
