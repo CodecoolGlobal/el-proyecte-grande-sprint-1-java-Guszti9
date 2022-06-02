@@ -10,7 +10,7 @@ table.blueTable {
 }
 table.blueTable td, table.blueTable th {
     border: 1px solid #5e9396;
-    padding: 3px 0px;
+    padding: 6px 0px;
 }
 table.blueTable tbody td {
     font-size: 13px;
@@ -46,4 +46,14 @@ table.blueTable tfoot .links a{
     color: #FFFFFF;
     padding: 2px 8px;
     border-radius: 5px;
+}
+
+.card {
+    display: grid;
+    grid-template-areas: "image" "text" "stats";
+
+    border-radius: 18px;
+    background: #676666;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: center;
 }

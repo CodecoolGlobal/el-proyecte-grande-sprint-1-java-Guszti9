@@ -22,8 +22,6 @@ function GetUserDetails(props) {
         getData();
     }, []);
 
-    console.log(data)
-
     return (
         <div id={"user-details"}>
             <table className="blueTable">
