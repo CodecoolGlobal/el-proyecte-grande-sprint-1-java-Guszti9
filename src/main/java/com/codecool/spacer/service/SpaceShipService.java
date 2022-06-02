@@ -4,7 +4,6 @@ import com.codecool.spacer.dao.SpaceShipDao;
 import com.codecool.spacer.model.Filter;
 import com.codecool.spacer.model.SpaceShip;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 public class SpaceShipService {

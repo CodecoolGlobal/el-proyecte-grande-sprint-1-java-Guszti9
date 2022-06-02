@@ -2,12 +2,8 @@ package com.codecool.spacer.dao.mem;
 
 import com.codecool.spacer.dao.SpaceShipDao;
 import com.codecool.spacer.model.*;
-import com.codecool.spacer.model.shipdata.Classification;
-import com.codecool.spacer.model.shipdata.FuelType;
-import com.codecool.spacer.model.shipdata.Manufacturer;
-
-import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -58,9 +54,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     @Override
     public void addSpaceShips(SpaceShip[] spaceShips){
-        for (SpaceShip spaceShip : spaceShips) {
-            this.spaceShips.add(spaceShip);
-        }
+        this.spaceShips.addAll(Arrays.asList(spaceShips));
     }
 
     @Override

@@ -1,12 +1,10 @@
 package com.codecool.spacer.controller;
 
-
 import com.codecool.spacer.model.SpaceShip;
 import com.codecool.spacer.model.User;
 import com.codecool.spacer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")

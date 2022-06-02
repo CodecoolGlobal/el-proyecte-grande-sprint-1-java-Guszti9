@@ -1,8 +1,6 @@
 package com.codecool.spacer.model;
 
 import com.codecool.spacer.model.calendar.ShipBook;
-
-import javax.swing.text.html.Option;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;

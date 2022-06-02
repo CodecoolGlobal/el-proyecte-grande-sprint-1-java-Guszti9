@@ -4,7 +4,6 @@ import com.codecool.spacer.dao.UserDao;
 import com.codecool.spacer.model.SpaceShip;
 import com.codecool.spacer.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 public class UserService {

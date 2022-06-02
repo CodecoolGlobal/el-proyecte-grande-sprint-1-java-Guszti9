@@ -5,7 +5,6 @@ import com.codecool.spacer.model.SpaceShip;
 import com.codecool.spacer.model.User;
 import com.codecool.spacer.service.SpaceShipService;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
