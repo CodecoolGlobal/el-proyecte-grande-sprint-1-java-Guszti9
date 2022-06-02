@@ -1,10 +1,8 @@
 function ShipDescription(props) {
     return (
-        <div>
-            <p>
-                {props.description}
-            </p>
-        </div>
+        <p>
+            {props.description}
+        </p>
     );
 }
 

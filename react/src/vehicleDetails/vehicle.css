@@ -12,7 +12,8 @@
     grid-template-rows: auto auto;
     grid-template-areas:
             "picture details"
-            "description details";
+            "description details"
+            "calendar calendar";
 
 
     grid-column-gap: 1%;
@@ -22,6 +23,7 @@
 .vehicle-picture-block {
     grid-area: picture;
     text-align: center;
+    background: #3b3838;
 
     border: 2px #02e7eb solid;
 }
@@ -29,6 +31,7 @@
 .vehicle-description-block {
     grid-area: description;
     padding: 20px;
+    background: #3b3838;
 
     border: 2px #02e7eb solid;
 }
@@ -36,6 +39,15 @@
 .vehicle-details-block {
     grid-area: details;
     padding: 20px;
+    background: #3b3838;
+
+    border: 2px #02e7eb solid;
+}
+
+.vehicle-calendar-block {
+    grid-area: calendar;
+    padding: 20px;
+    background: #3b3838;
 
     border: 2px #02e7eb solid;
 }
@@ -86,4 +98,33 @@
 
 th {
     padding: 0 10px;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: 60% 35%;
+    grid-column-gap: 5%;
+    grid-template-areas:
+            "calendar controller";
+}
+
+.calendar-div {
+    grid-area: calendar;
+}
+
+.controller-div {
+    grid-area: controller;
+    text-align: center;
+}
+
+.react-calendar__tile--active {
+    background: #02e7eb !important;
+    color: #282c34 !important;
+}
+
+.react-calendar__tile {
+    background: #282c34;
+    color: #02e7eb;
+    border-color: #02e7eb;
+    border-width: 2px;
 }

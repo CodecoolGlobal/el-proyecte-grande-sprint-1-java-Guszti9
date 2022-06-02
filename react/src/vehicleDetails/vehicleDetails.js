@@ -3,6 +3,7 @@ import ShipImage from "./shipImage";
 import ShipDescription from "./shipDescription";
 import ShipDetails from "./ShipDetails";
 import "./vehicle.css"
+import ShipCalendar from "./shipCalendar";
 
 
 function VehicleDetails(props) {
@@ -30,6 +31,9 @@ function VehicleDetails(props) {
                  </div>
                 <div className="vehicle-details-block">
                     <ShipDetails ship={ship} />
+                </div>
+                <div className="vehicle-calendar-block">
+                    <ShipCalendar />
                 </div>
             </div>
         );

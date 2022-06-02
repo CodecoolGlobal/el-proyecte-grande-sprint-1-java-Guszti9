@@ -5,7 +5,6 @@ function ShipImage(props) {
     const [imageInd, setImageInd] = useState(0);
 
     useEffect( () => {
-        console.log(props.image)
         if (props.image !== undefined) {
             setShipImage(props.image);
         }
