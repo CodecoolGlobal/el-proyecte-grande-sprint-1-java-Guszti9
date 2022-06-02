@@ -8,6 +8,7 @@ import com.codecool.spacer.model.shipdata.Manufacturer;
 import java.math.BigDecimal;
 import java.util.List;
 
+import java.util.List;
 
 public class SpaceShip {
     private static int idCounter = 0;
@@ -25,15 +26,14 @@ public class SpaceShip {
     private Classification classification;
     private FuelType fuelType;
     private Manufacturer manufacturer;
-    private String[] pictures;
+    private List<String> image;
     private ShipCalendar shipCalendar;
     private int userId;
     private Boolean isAvailable;
 
-    private List<String> image;
-
-    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, String[] pictures, int userId, List<String> image) {
+    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, List<String> image, int userId) {
         this.name = name;
+        this.image = image;
         this.brand = brand;
         this.year = year;
         this.description = description;
@@ -45,7 +45,6 @@ public class SpaceShip {
         this.classification = classification;
         this.fuelType = fuelType;
         this.manufacturer = manufacturer;
-        this.pictures = pictures;
         this.image = image;
         this.shipCalendar = new ShipCalendar(id);
         this.userId = userId;
@@ -60,6 +59,10 @@ public class SpaceShip {
 
     public String getName() {
         return name;
+    }
+
+    public List<String> getImage() {
+        return image;
     }
 
     public String getBrand() {
@@ -94,9 +97,6 @@ public class SpaceShip {
         return price;
     }
 
-    public String[] getPictures(){
-        return pictures;}
-
     public Classification getClassification() {
         return classification;
     }
@@ -117,9 +117,6 @@ public class SpaceShip {
         return isAvailable;
     }
 
-    public List<String> getImage() {
-        return image;
-    }
 
     public void editSpaceShip(SpaceShip spaceShip) {
         name = spaceShip.getName();

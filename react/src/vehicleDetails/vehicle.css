@@ -1,0 +1,134 @@
+@font-face {
+    font-family: Expansiva;
+    src: url(../font/Expansiva.otf);
+    font-weight:200;
+}
+
+.vehicle-body {
+    margin: 2.5%;
+    color:#02e7eb;
+    display: grid;
+    grid-template-columns: 70% 29%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+            "picture details"
+            "description details"
+            "calendar calendar";
+
+
+    grid-column-gap: 1%;
+    grid-row-gap: 2%;
+}
+
+.vehicle-picture-block {
+    grid-area: picture;
+    text-align: center;
+    background: #3b3838;
+
+    border: 2px #02e7eb solid;
+}
+
+.vehicle-description-block {
+    grid-area: description;
+    padding: 20px;
+    background: #3b3838;
+
+    border: 2px #02e7eb solid;
+}
+
+.vehicle-details-block {
+    grid-area: details;
+    padding: 20px;
+    background: #3b3838;
+
+    border: 2px #02e7eb solid;
+}
+
+.vehicle-calendar-block {
+    grid-area: calendar;
+    padding: 20px;
+    background: #3b3838;
+
+    border: 2px #02e7eb solid;
+}
+
+.image-container {
+    display: grid;
+    margin: 2.5% 5%;
+    grid-template-columns: 10% 75% 10%;
+    grid-template-rows:  44% 10% 44%;
+    grid-template-areas:
+            ". picture ."
+            "arrow-left picture arrow-right"
+            ". picture .";
+    grid-column-gap: 2%;
+    grid-row-gap: 1%;
+
+}
+
+.left-arrow{
+    grid-area: arrow-left;
+}
+
+.ship-picture{
+    grid-area: picture;
+    text-align: center;
+}
+
+.ship-picture img{
+    height: 60vh;
+}
+
+.right-arrow{
+    grid-area: arrow-right;
+}
+
+.arrow {
+    text-align: center;
+    cursor: pointer;
+}
+
+.arrow img{
+    width: 100%;
+}
+
+#ship-name {
+    font-family: Expansiva;
+}
+
+th {
+    padding: 0 10px;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: 60% 35%;
+    grid-column-gap: 5%;
+    grid-template-areas:
+            "calendar controller";
+}
+
+.calendar-div {
+    grid-area: calendar;
+}
+
+.controller-div {
+    grid-area: controller;
+    text-align: center;
+}
+
+.react-calendar__tile--active {
+    background: #02e7eb !important;
+    color: #282c34 !important;
+}
+
+.react-calendar__tile {
+    background: #282c34;
+    color: #02e7eb;
+    border-color: #02e7eb;
+    border-width: 2px;
+}
+
+.rented-date {
+    color: red;
+}
