@@ -23,7 +23,7 @@
          outline: 0;
          border: 1px solid #000000;
          border-radius: 10px;
-         background: #5c5c5c;
+         background-color: rgba(255,255,255,0.2);
          color: #02e7eb;
          -webkit-appearance: none;
          font-size: 17px;
@@ -58,4 +58,11 @@
 .select select:hover ~ .select_arrow,
 .select select:focus ~ .select_arrow {
     border-color: #a4fdff;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
 }

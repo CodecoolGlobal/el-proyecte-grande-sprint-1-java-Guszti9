@@ -2,6 +2,7 @@ import './mainPage.css';
 import {useEffect, useState} from "react";
 import {convertFunctions} from "./convertFunctions";
 import {YearSelect, WeaponSelect, MassSelect, PriceSelect, ClassSelect, FuelTypeSelect, ManufacturerSelect} from "./selectors";
+import MainPageCard from "./mainPageCard";
 
 async function apiPost(url, payload) {
     let response = await fetch(url, {
@@ -79,8 +80,8 @@ function SearchContainer() {
 function ResultContainer({result}){
     return(
         <div className="container result">
-            <div>
-                {result?.map((r, index) => <p key={index}>{r.name}</p>)}
+            <div className="card-container">
+                {result?.map((r, index) => <MainPageCard index={index} shipInfo={r}/>)}
             </div>
         </div>
     )
