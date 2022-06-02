@@ -20,4 +20,6 @@ public interface UserDao {
     void addShipToUser(int userId, SpaceShip ship);
 
     void removeShipFromUser(int userId, int shipId);
+
+    List<SpaceShip> filterByUser(int userId);
 }

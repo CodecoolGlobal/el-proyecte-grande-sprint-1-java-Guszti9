@@ -1,14 +1,13 @@
 package com.codecool.spacer.controller;
 
-
 import com.codecool.spacer.model.SpaceShip;
 import com.codecool.spacer.model.User;
 import com.codecool.spacer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class UserController {
 
@@ -53,5 +52,10 @@ public class UserController {
     @DeleteMapping("api/user/{userId}/remove_ship/{shipId}")
     public void removeShipFromUser(@PathVariable int userId, @PathVariable int shipId) {
         userService.removeShipFromUser(userId, shipId);
+    }
+
+    @GetMapping("/api/user/{id}/ships")
+    public List<SpaceShip> getUserShips(@PathVariable int id){
+        return userService.getUserShips(id);
     }
 }

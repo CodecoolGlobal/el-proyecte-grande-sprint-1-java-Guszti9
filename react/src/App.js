@@ -1,11 +1,12 @@
-import MainPage from "./mainPage";
+import MainPage from "./main_page/mainPage";
 import NavBar from "./navBar";
 import Header from "./header";
+import React from "react";
 import React, {useEffect} from "react";
 import VehicleDetails from "./vehicleDetails/vehicleDetails";
 import './App.css';
 import Footer from "./footer";
-import UserPage from "./userPage";
+import UserPage from "./user_page/userPage";
 
 function App() {
   return (

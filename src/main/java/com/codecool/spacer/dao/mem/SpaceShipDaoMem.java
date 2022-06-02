@@ -2,12 +2,8 @@ package com.codecool.spacer.dao.mem;
 
 import com.codecool.spacer.dao.SpaceShipDao;
 import com.codecool.spacer.model.*;
-import com.codecool.spacer.model.shipdata.Classification;
-import com.codecool.spacer.model.shipdata.FuelType;
-import com.codecool.spacer.model.shipdata.Manufacturer;
-
-import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,8 +28,8 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     @Override
     public List<SpaceShip> filterSpaceShips(Filter filter) {
         return spaceShips.stream()
-                .filter(i -> filter.getYear() == null
-                        || i.getYear() >= filter.getYear())
+                .filter(i -> filter.getMinYear() == null && filter.getMaxYear() == null
+                        || i.getYear() >= filter.getMinYear() && i.getYear() <= filter.getMaxYear())
                 .filter(i -> filter.getWeapons() == null
                         || i.getWeapons() == filter.getWeapons())
                 .filter(i -> filter.getMinMass() == null && filter.getMaxMass() == null
@@ -58,9 +54,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     @Override
     public void addSpaceShips(SpaceShip[] spaceShips){
-        for (SpaceShip spaceShip : spaceShips) {
-            this.spaceShips.add(spaceShip);
-        }
+        this.spaceShips.addAll(Arrays.asList(spaceShips));
     }
 
     @Override
@@ -76,12 +70,6 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     @Override
     public void rentSpaceShip(int id) {
 
-    }
-
-    private List<SpaceShip> filterByUser(Integer userId, List<SpaceShip> spaceShips){
-        return spaceShips.stream()
-                .filter(spaceShip -> spaceShip.getUserId() == userId)
-                .collect(Collectors.toList());
     }
 
     private List<SpaceShip> filterAvailable(List<SpaceShip> spaceShips){
