@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class UserDaoMem implements UserDao {
     private final List<User> allUsers = new ArrayList<>();
@@ -57,5 +58,13 @@ public class UserDaoMem implements UserDao {
         Optional<User> user =  allUsers.stream().filter(u -> u.getId() == userId).findFirst();
         if (user.isPresent() && user.get().removeShip(shipId))
             spaceShipService.deleteSpaceShip(shipId);
+    }
+
+    @Override
+    public List<SpaceShip> filterByUser(int userId) {
+        List<SpaceShip> spaceShips = spaceShipService.getSpaceShips();
+        return spaceShips.stream()
+                .filter(spaceShip -> spaceShip.getUserId() == userId)
+                .collect(Collectors.toList());
     }
 }

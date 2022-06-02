@@ -42,4 +42,8 @@ public class UserService {
     public void removeShipFromUser(int userId, int shipId) {
         userDao.removeShipFromUser(userId, shipId);
     }
+
+    public List<SpaceShip> getUserShips(int userId){
+        return userDao.filterByUser(userId);
+    }
 }

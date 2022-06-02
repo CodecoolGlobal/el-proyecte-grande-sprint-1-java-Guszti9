@@ -54,4 +54,9 @@ public class UserController {
     public void removeShipFromUser(@PathVariable int userId, @PathVariable int shipId) {
         userService.removeShipFromUser(userId, shipId);
     }
+
+    @GetMapping("/api/user/{id}/ships")
+    public List<SpaceShip> getUserShips(@PathVariable int id){
+        return userService.getUserShips(id);
+    }
 }

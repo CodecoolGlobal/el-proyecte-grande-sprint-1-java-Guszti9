@@ -78,12 +78,6 @@ public class SpaceShipDaoMem implements SpaceShipDao {
 
     }
 
-    private List<SpaceShip> filterByUser(Integer userId, List<SpaceShip> spaceShips){
-        return spaceShips.stream()
-                .filter(spaceShip -> spaceShip.getUserId() == userId)
-                .collect(Collectors.toList());
-    }
-
     private List<SpaceShip> filterAvailable(List<SpaceShip> spaceShips){
         return spaceShips.stream()
                 .filter(SpaceShip::isAvailable)
