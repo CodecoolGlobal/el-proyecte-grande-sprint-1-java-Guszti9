@@ -86,7 +86,6 @@ function ResultContainer({result}){
     )
 }
 
-
 function MainPage(){
     return (
         <div>

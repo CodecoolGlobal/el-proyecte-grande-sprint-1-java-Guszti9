@@ -25,13 +25,14 @@ public class SpaceShip {
     private Classification classification;
     private FuelType fuelType;
     private Manufacturer manufacturer;
+    private String[] pictures;
     private ShipCalendar shipCalendar;
     private int userId;
     private Boolean isAvailable;
 
     private List<String> image;
 
-    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, int userId, List<String> image) {
+    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, String[] pictures, int userId, List<String> image) {
         this.name = name;
         this.brand = brand;
         this.year = year;
@@ -44,6 +45,7 @@ public class SpaceShip {
         this.classification = classification;
         this.fuelType = fuelType;
         this.manufacturer = manufacturer;
+        this.pictures = pictures;
         this.image = image;
         this.shipCalendar = new ShipCalendar(id);
         this.userId = userId;
@@ -91,6 +93,9 @@ public class SpaceShip {
     public BigDecimal getPrice() {
         return price;
     }
+
+    public String[] getPictures(){
+        return pictures;}
 
     public Classification getClassification() {
         return classification;

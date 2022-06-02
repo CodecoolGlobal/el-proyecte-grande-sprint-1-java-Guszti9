@@ -1,5 +1,6 @@
 .header {
-    background-image: url("./images/background_img.jpg");    min-height: 20vh;
+    background-image: url("./images/site_background.jpg");
+    min-height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;

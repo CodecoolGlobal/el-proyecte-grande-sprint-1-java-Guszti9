@@ -8,6 +8,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    background-color: rgba(0,0,0,0.6);
 }
 
 .button-container.left{
@@ -27,5 +28,5 @@
 }
 
 .button.plus:hover{
-    background: #282c34;
+    background: transparent;
 }

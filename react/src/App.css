@@ -35,8 +35,8 @@
     padding: 10vm;
 }
 
-Body {
-    background-image: url("./images/background_img.jpg");
+body {
+    background-image: url("./images/site_background.jpg");
 }
 
 .App-link {
