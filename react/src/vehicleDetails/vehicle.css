@@ -128,3 +128,7 @@ th {
     border-color: #02e7eb;
     border-width: 2px;
 }
+
+.rented-date {
+    color: red;
+}

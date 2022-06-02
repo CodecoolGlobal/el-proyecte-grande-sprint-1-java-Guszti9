@@ -4,6 +4,7 @@ import {useState} from "react";
 function ShipCalendar(props) {
     const [value, onChange] = useState(null);
     const [type, setType] = useState("null")
+    const [rentedDates, setRentedDates] = useState([new Date(2022, 6, 2)])
 
     const onClick = date => {
         if (type === "null") {
@@ -22,10 +23,20 @@ function ShipCalendar(props) {
         }
     }
 
+    const colorRentDay = (date, view) => {
+        if (rentedDates.find(d=> d.getTime() === date.date.getTime()) !== undefined) {
+            return "rented-date";
+        }
+    }
+
     return (
         <div className="calendar-container">
             <div className="calendar-div">
-                <Calendar onChange={onClick} value={value} />
+                <Calendar
+                    onChange={onClick}
+                    value={value}
+                    tileClassName={colorRentDay}
+                />
             </div>
             <div className="controller-div">
                 <button>
