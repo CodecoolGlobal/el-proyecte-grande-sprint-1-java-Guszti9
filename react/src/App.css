@@ -1,29 +1,35 @@
 @font-face {
     font-family: Expansiva;
     src: url(./font/Expansiva.otf);
-    font-weight:200;
+    font-weight: 200;
+}
+
+.App {
+    text-align: center;
+    background-color: #282c34;
 }
 
 .button {
     background: #282c34;
-    border-radius:6px;
-    display:inline-block;
-    cursor:pointer;
-    color:#02e7eb;
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    color: #02e7eb;
     font-family: Expansiva, serif;
-    font-size:30px;
-    font-weight:bold;
-    padding:9px 17px;
-    text-decoration:none;
-    text-shadow:0 1px 0 #528ecc;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 9px 17px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #528ecc;
 }
+
 .button:hover {
     background: #282c34 linear-gradient(to bottom, #282c34 80%, #02e7eb 100%);
 }
 
 .button:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
 
 .inner-div {
@@ -32,5 +38,45 @@
 }
 
 Body {
+    background-color: #282c34;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#wrapper {
+    margin: 10px 10px 0 10px;
+    width: 98.6%;
+    position: center;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-color: #02e7eb;
+    border-width: 1px;
+    /*border: 1px solid #02e7eb;*/
+    overflow: hidden;
+}
+
+#user-picture {
+    width: 600px;
+    float: left; /* add this */
+}
+
+#user-details {
+    border: 1px solid #02e7eb;
+    float: right;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+body {
     background-color: #282c34;
 }

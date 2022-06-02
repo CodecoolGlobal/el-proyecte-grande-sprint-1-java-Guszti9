@@ -4,7 +4,6 @@ import com.codecool.spacer.dao.UserDao;
 import com.codecool.spacer.model.SpaceShip;
 import com.codecool.spacer.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 public class UserService {
@@ -41,5 +40,9 @@ public class UserService {
 
     public void removeShipFromUser(int userId, int shipId) {
         userDao.removeShipFromUser(userId, shipId);
+    }
+
+    public List<SpaceShip> getUserShips(int userId){
+        return userDao.filterByUser(userId);
     }
 }

@@ -1,0 +1,66 @@
+table.blueTable {
+    border: 1px solid #02e7eb;
+    background-color: #676666;
+    width: 300px;
+    height: 600px;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 20px 20px 16% 20px;
+}
+table.blueTable td, table.blueTable th {
+    border: 1px solid #5e9396;
+    padding: 6px 0;
+}
+table.blueTable tbody td {
+    font-size: 13px;
+    color: #02e7eb;
+}
+table.blueTable tr:nth-child(even) {
+    background: #3b3838;
+}
+table.blueTable thead {
+    background-color: #3b3838;
+    border-bottom: 1px solid #02e7eb;
+}
+table.blueTable thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #02e7eb;
+    text-align: center;
+    border-left: 2px solid #02e7eb;
+}
+table.blueTable thead th:first-child {
+    border-left: none;
+    font-size: 25px;
+}
+
+table.blueTable tfoot td {
+    font-size: 14px;
+}
+table.blueTable tfoot .links {
+    text-align: right;
+}
+table.blueTable tfoot .links a{
+    display: inline-block;
+    background: #1C6EA4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.card {
+    border-radius: 18px;
+    background: #676666;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: center;
+    margin: 10px;
+    width: fit-content;
+}
+
+#advertisement-box {
+    display: flex;
+    padding: 2% 7% 2%;
+    border: 1px solid #02e7eb;
+    justify-content: center;
+    flex-wrap: wrap;
+}

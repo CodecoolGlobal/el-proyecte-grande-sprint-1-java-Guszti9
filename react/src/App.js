@@ -1,10 +1,10 @@
 import MainPage from "./main_page/mainPage";
 import NavBar from "./navBar";
 import Header from "./header";
-import React, {useEffect} from "react";
+import React from "react";
 import './App.css';
 import Footer from "./footer";
-import UserPage from "./userPage";
+import UserPage from "./user_page/userPage";
 
 function App() {
   return (
@@ -12,7 +12,9 @@ function App() {
         <Header/>
         <div className="inner-div">
             <NavBar/>
-            <MainPage/>
+            {/*<MainPage/>*/}
+            <UserPage/>
+            <Footer/>
         </div>
     </div>
   );
