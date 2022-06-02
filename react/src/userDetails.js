@@ -20,7 +20,7 @@ function GetUserDetails(props) {
     }
     useEffect(() => {
         getData();
-    }, []);
+    }, [data]);
 
     return (
         <div id={"user-details"}>

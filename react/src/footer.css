@@ -14,26 +14,31 @@
 .fa-facebook {
     background: #3B5998;
     color: white;
+    border-radius: 18px;
 }
 
 .fa-twitter {
     background: #55ACEE;
     color: white;
+    border-radius: 18px;
 }
 
 .fa-linkedin {
     background: #007bb5;
     color: white;
+    border-radius: 18px;
 }
 
 .fa-instagram {
     background: #125688;
     color: white;
+    border-radius: 18px;
 }
 
 .fa-vimeo {
     background: #45bbff;
     color: white;
+    border-radius: 18px;
 }
 
 #footer-text {

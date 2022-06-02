@@ -21,15 +21,13 @@ function UserAdvertisements (props) {
         getData();
     }, [data]);
 
-    console.log(data)
-
     return(
         data.map((d) =>
             <div className="card" data-id={d.id}>
                 <div className="card-image"></div>
                 <div className="card-text">
                     <h2>{d.name}</h2>
-                    <p>{d.price}</p>
+                    <p>Price: {d.price} $</p>
                 </div>
             </div>)
     )
