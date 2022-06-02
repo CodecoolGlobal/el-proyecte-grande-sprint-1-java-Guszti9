@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import './userPage.css';
-import logo from './images/spacer_name.png';
+import logo from '../images/spacer_name.png';
 
 function UserAdvertisements (props) {
     const [data, setData] = React.useState([]);

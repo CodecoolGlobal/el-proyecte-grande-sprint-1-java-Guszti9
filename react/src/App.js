@@ -1,11 +1,10 @@
 import MainPage from "./mainPage";
 import NavBar from "./navBar";
 import Header from "./header";
-import React, {useEffect} from "react";
+import React from "react";
 import './App.css';
 import Footer from "./footer";
-import UserPage from "./userPage";
-import UserDetails from "./userDetails";
+import UserPage from "./user_page/userPage";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import './userPicture.css'
-import logo from './images/spacer_logo.png';
+import logo from '../images/spacer_logo.png';
 
 function userPicture(){
     return (
