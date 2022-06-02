@@ -19,13 +19,13 @@ function UserAdvertisements (props) {
     }
     useEffect(() => {
         getData();
-    }, []);
+    }, [data]);
 
     console.log(data)
 
     return(
         data.map((d) =>
-            <div className="card">
+            <div className="card" data-id={d.id}>
                 <div className="card-image"></div>
                 <div className="card-text">
                     <h2>{d.name}</h2>

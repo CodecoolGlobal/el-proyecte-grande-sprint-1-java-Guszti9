@@ -6,7 +6,7 @@ table.blueTable {
     height: 600px;
     text-align: center;
     border-collapse: collapse;
-    margin: 20px 20px 20px 20px;
+    margin: 20px 20px 16% 20px;
 }
 table.blueTable td, table.blueTable th {
     border: 1px solid #5e9396;
@@ -49,11 +49,17 @@ table.blueTable tfoot .links a{
 }
 
 .card {
-    display: grid;
-    grid-template-areas: "image" "text" "stats";
-
     border-radius: 18px;
     background: #676666;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
     text-align: center;
+    margin: 10px;
+    width: fit-content;
+}
+
+#advertisement-box {
+    display: flex;
+    padding: 2% 20% 2%;
+    border: 1px solid #02e7eb;
+    justify-content: center;
 }

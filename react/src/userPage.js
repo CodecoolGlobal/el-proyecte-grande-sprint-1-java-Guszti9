@@ -8,7 +8,9 @@ function userPage(){
         <div id={"wrapper"}>
             <UserPicture/>
             <GetUserDetails id={1}/>
-            <UserAdvertisements id={0}/>
+            <div id="advertisement-box">
+                <UserAdvertisements id={0}/>
+            </div>
         </div>
     )
 }
