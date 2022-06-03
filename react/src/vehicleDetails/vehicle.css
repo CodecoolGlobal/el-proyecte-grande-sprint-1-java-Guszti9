@@ -23,15 +23,14 @@
 .vehicle-picture-block {
     grid-area: picture;
     text-align: center;
-    background: #3b3838;
-
+    background-color: rgba(0,0,0,0.6);
     border: 2px #02e7eb solid;
 }
 
 .vehicle-description-block {
     grid-area: description;
     padding: 20px;
-    background: #3b3838;
+    background-color: rgba(0,0,0,0.6);
 
     border: 2px #02e7eb solid;
 }
@@ -39,7 +38,7 @@
 .vehicle-details-block {
     grid-area: details;
     padding: 20px;
-    background: #3b3838;
+    background-color: rgba(0,0,0,0.6);
 
     border: 2px #02e7eb solid;
 }
@@ -47,7 +46,7 @@
 .vehicle-calendar-block {
     grid-area: calendar;
     padding: 20px;
-    background: #3b3838;
+    background-color: rgba(0,0,0,0.6);
 
     border: 2px #02e7eb solid;
 }
@@ -77,6 +76,7 @@
 
 .ship-picture img{
     height: 60vh;
+    width: 100%;
 }
 
 .right-arrow{
