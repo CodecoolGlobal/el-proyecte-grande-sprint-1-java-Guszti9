@@ -9,8 +9,6 @@ function App() {
         <Header/>
         <div className="inner-div">
             <MainPage/>
-            {/*<UserPage/>*/}
-            {/*<VehicleDetails id={0}/>*/}
         </div>
     </div>
   );
