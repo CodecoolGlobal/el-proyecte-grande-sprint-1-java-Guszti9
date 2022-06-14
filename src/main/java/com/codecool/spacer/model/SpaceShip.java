@@ -33,7 +33,6 @@ public class SpaceShip {
 
     public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, List<String> image, int userId) {
         this.name = name;
-        this.image = image;
         this.brand = brand;
         this.year = year;
         this.description = description;

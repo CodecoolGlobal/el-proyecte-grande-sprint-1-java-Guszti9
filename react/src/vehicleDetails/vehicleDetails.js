@@ -4,10 +4,12 @@ import ShipDescription from "./shipDescription";
 import ShipDetails from "./ShipDetails";
 import "./vehicle.css"
 import ShipCalendar from "./shipCalendar";
+import {Outlet, useParams} from "react-router-dom";
 
 
-function VehicleDetails(props) {
-    const [ship, setShip] = useState({nane: null});
+function VehicleDetails() {
+    let params = useParams()
+    const [ship, setShip] = useState([]);
 
     const fetchShip = id => {
         fetch(`http://localhost:8080/api/spaceship/${id}`).
@@ -16,10 +18,11 @@ function VehicleDetails(props) {
     }
 
     useEffect( () => {
-        fetchShip(props.id)
+        fetchShip(parseInt(params.spaceshipId))
     }, [])
 
     if (ship) {
+        console.log(ship)
         return  (
             <div className="vehicle-body">
                 <div className="vehicle-picture-block">
@@ -35,6 +38,7 @@ function VehicleDetails(props) {
                 <div className="vehicle-calendar-block">
                     <ShipCalendar />
                 </div>
+                <Outlet/>
             </div>
         );
     }

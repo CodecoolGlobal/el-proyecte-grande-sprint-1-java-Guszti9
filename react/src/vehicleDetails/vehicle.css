@@ -132,3 +132,11 @@ th {
 .rented-date {
     color: red;
 }
+
+.left-arrow.hidden {
+    display: none;
+}
+
+.right-arrow.hidden {
+    display: none;
+}
