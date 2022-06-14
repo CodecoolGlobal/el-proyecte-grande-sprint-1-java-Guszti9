@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class Config {
+
     @Bean
     @Scope("singleton")
     public SpaceShipService getSpaceShipService(SpaceShipDao spaceShipDao) {

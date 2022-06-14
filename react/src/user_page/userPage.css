@@ -50,11 +50,12 @@ table.blueTable tfoot .links a{
 
 .card {
     border-radius: 18px;
-    background: #676666;
+    background-color: rgba(255,255,255,0.2);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
     text-align: center;
     margin: 10px;
     width: fit-content;
+    overflow: hidden;
 }
 
 #advertisement-box {
@@ -63,4 +64,19 @@ table.blueTable tfoot .links a{
     border: 1px solid #02e7eb;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.ship-image {
+    width: 400px;
+    height: 200px;
+}
+
+.ship-name-text {
+    color: #02e7eb;
+    font-family: Expansiva, serif;
+    font-size: 20px;
+}
+
+.card:hover{
+    background-color: rgba(255,255,255,0.4);
 }

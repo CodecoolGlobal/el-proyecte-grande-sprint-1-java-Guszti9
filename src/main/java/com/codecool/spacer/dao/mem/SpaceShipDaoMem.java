@@ -13,7 +13,7 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     @Override
     public SpaceShip getSpaceShipById(int id){
         for (SpaceShip spaceShip : spaceShips) {
-            if (spaceShip.getUserId() == id){
+            if (spaceShip.getId() == id){
                 return spaceShip;
             }
         }
