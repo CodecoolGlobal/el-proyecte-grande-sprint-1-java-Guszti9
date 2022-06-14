@@ -24,7 +24,6 @@ function UserAdvertisements(props) {
         });
     }, []);
 
-    console.log(data.image)
 
     return (
         data.map((d) =>
