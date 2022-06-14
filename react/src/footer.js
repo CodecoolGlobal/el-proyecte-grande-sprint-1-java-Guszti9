@@ -2,7 +2,7 @@ import './footer.css'
 
 function Footer(){
     return (
-        <div>
+        <div className="footer">
             <a href="https://www.facebook.com" target="_blank" className="fa fa-facebook"/>
             <a href="https://www.twitter.com" target="_blank" className="fa fa-twitter"/>
             <a href="https://www.linkedin.com" target="_blank" className="fa fa-linkedin"/>
