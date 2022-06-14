@@ -6,11 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import VehicleDetails from "./vehicleDetails/vehicleDetails";
 import UserPage from "./user_page/userPage";
+import Header from "./header";
+import NavBar from "./navBar";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
+            <Header/>
+            <NavBar/>
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="user" element={<UserPage />} />
