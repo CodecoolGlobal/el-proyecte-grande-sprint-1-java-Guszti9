@@ -22,7 +22,6 @@ function VehicleDetails() {
     }, [])
 
     if (ship) {
-        console.log(ship)
         return  (
             <div className="vehicle-body">
                 <div className="vehicle-picture-block">
