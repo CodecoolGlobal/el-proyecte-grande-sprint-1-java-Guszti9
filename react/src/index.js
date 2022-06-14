@@ -8,6 +8,7 @@ import VehicleDetails from "./vehicleDetails/vehicleDetails";
 import UserPage from "./user_page/userPage";
 import Header from "./header";
 import NavBar from "./navBar";
+import Footer from "./footer";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
                 <Route path="user/:userId" element={<UserPage />} />
                 <Route path="spaceship-details/:spaceshipId" element={<VehicleDetails/>}/>
             </Routes>
+            <Footer/>
         </BrowserRouter>
     </React.StrictMode>
 );
