@@ -1,8 +1,9 @@
 import React, {useEffect} from "react";
 import './userPage.css';
 import logo from '../images/spacer_name.png';
+import {Link} from "react-router-dom";
 
-function UserAdvertisements (props) {
+function UserAdvertisements(props) {
     const [data, setData] = React.useState([]);
 
     const getData = async () => {
@@ -19,18 +20,25 @@ function UserAdvertisements (props) {
         });
     }
     useEffect(() => {
-        getData().then(function () {});
-    }, [data]);
+        getData().then(function () {
+        });
+    }, []);
 
-    return(
+    console.log(data.image)
+
+    return (
         data.map((d) =>
-            <div className="card" data-id={d.id}>
-                <div className="card-text">
-                    <h2>{d.name}</h2>
-                    <img src={logo} width="170" height="140" alt="pic"></img> {/*src={logo} will be src={d.image}*/}
-                    <p>Price: {d.price} $</p>
+            <Link to={"/spaceship-details/" + d.id}>
+                <div className="card" data-id={d.id}>
+                    <div className="card-text">
+                        <h2>{d.name}</h2>
+                        <img src={d.image[0]} width="170" height="140"
+                             alt="pic"></img> {/*src={logo} will be src={d.image}*/}
+                        <p>Price: {d.price} $</p>
+                    </div>
                 </div>
-            </div>)
+            </Link>
+        )
     )
 }
 

@@ -32,6 +32,7 @@ public class UserDaoMem implements UserDao {
 
     @Override
     public void addUser(User user){
+        System.out.print(user.getPicture());
         allUsers.add(user);
     }
 

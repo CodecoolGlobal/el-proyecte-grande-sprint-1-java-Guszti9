@@ -8,8 +8,6 @@ import com.codecool.spacer.model.shipdata.Manufacturer;
 import java.math.BigDecimal;
 import java.util.List;
 
-import java.util.List;
-
 public class SpaceShip {
     private static int idCounter = 0;
     private int id = idCounter++;
@@ -33,7 +31,6 @@ public class SpaceShip {
 
     public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, List<String> image, int userId) {
         this.name = name;
-        this.image = image;
         this.brand = brand;
         this.year = year;
         this.description = description;

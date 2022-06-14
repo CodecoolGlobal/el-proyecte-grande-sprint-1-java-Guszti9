@@ -1,54 +1,35 @@
 import './userPage.css';
-import React, {useEffect} from "react";
+import React from "react";
 
 function GetUserDetails(props) {
-
-    const [data, setData] = React.useState([]);
-
-    const getData = () => {
-        fetch(`http://localhost:8080/api/user/${props.id}`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Access-Control-Allow-Origin': 'http://localhost:8080'
-            }
-        }).then(function (response) {
-            return response.json();
-        }).then(function (myResp) {
-            setData(myResp);
-        });
-    }
-    useEffect(() => {
-        getData();
-    }, [data]);
 
     return (
         <div id={"user-details"}>
             <table className="blueTable">
                 <thead>
                     <th>
-                        {data.firstName} {data.lastName}
+                        {props.id.firstName} {props.id.lastName}
                     </th>
                 </thead>
                 <tbody>
                 <tr>
                     <td>
-                        {data.linkedIn}
+                        {props.id.linkedIn}
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        e-mail: {data.email}
+                        e-mail: {props.id.email}
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        facebook: {data.faceBook}
+                        facebook: {props.id.faceBook}
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        phone: {data.phoneNumber}
+                        phone: {props.id.phoneNumber}
                     </td>
                 </tr>
                 </tbody>

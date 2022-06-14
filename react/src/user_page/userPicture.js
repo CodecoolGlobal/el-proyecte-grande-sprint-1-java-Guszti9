@@ -1,10 +1,10 @@
 import './userPicture.css'
 import logo from '../images/spacer_logo.png';
 
-function userPicture(){
+function userPicture(props){
     return (
         <div id="user-picture">
-            <img src={logo} width="300" height="300"></img>
+            <img src={props.image} width="300" height="300"></img>
         </div>
     )
 }

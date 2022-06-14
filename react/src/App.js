@@ -4,6 +4,7 @@ import Header from "./header";
 import UserPage from "./user_page/userPage";
 import React, {useEffect} from "react";
 import './App.css';
+import {Route} from "react-router-dom";
 import Footer from "./footer";
 import VehicleDetails from "./vehicleDetails/vehicleDetails";
 
@@ -13,8 +14,8 @@ function App() {
         <Header/>
         <div className="inner-div">
             <NavBar/>
-            <MainPage/>
-            {/*<UserPage/>*/}
+            {/*<MainPage/>*/}
+            <UserPage id={0}/>
             {/*<VehicleDetails id={0}/>*/}
             <Footer/>
         </div>
