@@ -12,7 +12,7 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private Path picture;
+    private String picture;
     private String description;
     private String password;
     private String phoneNumber;
@@ -22,7 +22,7 @@ public class User {
     private List<SpaceShip> ships;
     private List<ShipBook> reservations;
 
-    public User(String firsName, String lastName, Path picture, String description, String password, String phoneNumber, String email, String linkedIn, String facebook) {
+    public User(String firsName, String lastName, String picture, String description, String password, String phoneNumber, String email, String linkedIn, String facebook) {
         this.firstName = firsName;
         this.lastName = lastName;
         this.picture = picture;
@@ -48,7 +48,7 @@ public class User {
         return lastName;
     }
 
-    public Path getPicture() {
+    public String getPicture() {
         return picture;
     }
 

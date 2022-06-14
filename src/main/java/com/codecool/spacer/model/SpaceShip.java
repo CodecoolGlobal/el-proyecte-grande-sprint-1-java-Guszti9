@@ -8,8 +8,6 @@ import com.codecool.spacer.model.shipdata.Manufacturer;
 import java.math.BigDecimal;
 import java.util.List;
 
-import java.util.List;
-
 public class SpaceShip {
     private static int idCounter = 0;
     private int id = idCounter++;
