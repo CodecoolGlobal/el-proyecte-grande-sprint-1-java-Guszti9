@@ -6,6 +6,25 @@ function ShipCalendar(props) {
     const [type, setType] = useState("null")
     const [rentedDates, setRentedDates] = useState([new Date(2022, 6, 2)])
 
+    function getDatesInRange(startDate, endDate) {
+        const date = new Date(startDate.getTime());
+
+        const dates = [];
+
+        while (date < endDate) {
+            dates.push(new Date(date));
+            date.setDate(date.getDate() + 1);
+        }
+
+        return dates;
+    }
+
+    const rentShip = () => {
+      if (value.length === 2) {
+          setRentedDates(rentedDates.concat(getDatesInRange(value[0], value[1])));
+      }
+    }
+
     const onClick = date => {
         if (type === "null") {
             onChange(date);
@@ -39,7 +58,7 @@ function ShipCalendar(props) {
                 />
             </div>
             <div className="controller-div">
-                <button>
+                <button onClick={rentShip}>
                     Rent
                 </button>
                 <p>Cost: </p>
