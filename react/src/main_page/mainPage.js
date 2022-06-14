@@ -93,7 +93,6 @@ function ResultContainer({result}){
 function MainPage(){
     return (
         <div>
-            <NavBar/>
             <SearchContainer/>
             <Footer/>
             <Outlet/>
