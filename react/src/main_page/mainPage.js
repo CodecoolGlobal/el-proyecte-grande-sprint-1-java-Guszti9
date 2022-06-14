@@ -3,6 +3,9 @@ import {useEffect, useState} from "react";
 import {convertFunctions} from "./convertFunctions";
 import {YearSelect, WeaponSelect, MassSelect, PriceSelect, ClassSelect, FuelTypeSelect, ManufacturerSelect} from "./selectors";
 import MainPageCard from "./mainPageCard";
+import {Outlet} from "react-router-dom";
+import NavBar from "../navBar";
+import Footer from "../footer";
 
 async function apiPost(url, payload) {
     let response = await fetch(url, {
@@ -90,7 +93,10 @@ function ResultContainer({result}){
 function MainPage(){
     return (
         <div>
+            <NavBar/>
             <SearchContainer/>
+            <Footer/>
+            <Outlet/>
         </div>
     )
 }

@@ -2,11 +2,12 @@ import UserPicture from "./userPicture";
 import GetUserDetails from "./userDetails";
 import UserAdvertisements from "./userAdvertisements";
 import React, {useEffect} from "react";
-
+import {Outlet} from "react-router-dom";
 
 function UserPage(props){
 
     const [data, setData] = React.useState([]);
+
 
     const getData = () => {
         fetch(`http://localhost:8080/api/user/${props.id}`, {
@@ -25,8 +26,6 @@ function UserPage(props){
         getData();
     }, []);
 
-    console.log(data)
-
     return (
         <div id={"wrapper"}>
             <UserPicture image={data.picture}/>
@@ -34,6 +33,7 @@ function UserPage(props){
             <div id="advertisement-box">
                 <UserAdvertisements id={props.id}/>
             </div>
+            <Outlet/>
         </div>
     )
 }
