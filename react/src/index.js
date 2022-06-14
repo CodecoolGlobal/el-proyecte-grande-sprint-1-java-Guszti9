@@ -13,7 +13,7 @@ root.render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />} />
-                <Route path="user" element={<UserPage />} />
+                <Route path="user/:userId" element={<UserPage />} />
                 <Route path="spaceship-details/:spaceshipId" element={<VehicleDetails/>}/>
             </Routes>
         </BrowserRouter>

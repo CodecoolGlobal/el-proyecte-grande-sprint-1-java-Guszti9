@@ -2,15 +2,16 @@ import UserPicture from "./userPicture";
 import GetUserDetails from "./userDetails";
 import UserAdvertisements from "./userAdvertisements";
 import React, {useEffect} from "react";
-import {Outlet} from "react-router-dom";
+import {Outlet, useParams} from "react-router-dom";
 
 function UserPage(props){
 
+    let params = useParams();
     const [data, setData] = React.useState([]);
 
 
     const getData = () => {
-        fetch(`http://localhost:8080/api/user/${props.id}`, {
+        fetch(`http://localhost:8080/api/user/${params.userId}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
