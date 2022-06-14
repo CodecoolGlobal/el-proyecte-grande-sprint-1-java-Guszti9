@@ -94,7 +94,6 @@ function MainPage(){
     return (
         <div>
             <SearchContainer/>
-            <Footer/>
             <Outlet/>
         </div>
     )

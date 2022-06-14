@@ -1,5 +1,6 @@
 import './navBar.css';
 import './App.css'
+import {Link} from "react-router-dom";
 
 function NavBar(){
     return (
@@ -9,7 +10,7 @@ function NavBar(){
                     <a className="button">Main</a>
                 </div>
                 <div className="button-container left">
-                    <a className="button">Profile</a>
+                    <Link className="button" to="/user/0">Profile</Link>
                 </div>
                 <div className="button-container center">
                     <a className="button plus">+</a>
