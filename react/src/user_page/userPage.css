@@ -1,6 +1,6 @@
 table.blueTable {
     border: 1px solid #02e7eb;
-    background-color: #676666;
+    background-color: rgba(255, 255, 255, 0.4);
     width: 300px;
     height: 600px;
     text-align: center;
@@ -14,12 +14,14 @@ table.blueTable td, table.blueTable th {
 table.blueTable tbody td {
     font-size: 13px;
     color: #02e7eb;
+    background-color: rgba(0, 0, 0, 0.6);
+
 }
 table.blueTable tr:nth-child(even) {
     background: #3b3838;
 }
 table.blueTable thead {
-    background-color: #3b3838;
+    background-color: rgba(0, 0, 0, 0.9);
     border-bottom: 1px solid #02e7eb;
 }
 table.blueTable thead th {
@@ -32,6 +34,7 @@ table.blueTable thead th {
 table.blueTable thead th:first-child {
     border-left: none;
     font-size: 25px;
+
 }
 
 table.blueTable tfoot td {
