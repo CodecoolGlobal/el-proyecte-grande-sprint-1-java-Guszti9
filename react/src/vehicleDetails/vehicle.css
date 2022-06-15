@@ -133,6 +133,25 @@ th {
     color: red;
 }
 
+.rent-button {
+    font-size: xx-large;
+    background-color: #282c34;
+    color: #02e7eb;
+    padding: 5px;
+    margin: 20px;
+}
+
+.rent-button:hover {
+    background-color: #3b3838;
+    color: #61dafb;
+}
+
+.rent-cost-data {
+    color: #02e7eb;
+    font-size: x-large;
+    margin: 0;
+}
+
 .left-arrow.hidden {
     display: none;
 }

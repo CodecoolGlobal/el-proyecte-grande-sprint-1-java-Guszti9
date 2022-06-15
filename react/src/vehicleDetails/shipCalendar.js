@@ -67,7 +67,7 @@ function ShipCalendar(props) {
         onChange(null);
         setType("null");
 
-        if (value.length === 2) {
+        if (value?.length === 2) {
             fetchRent();
             setRentedDates(rentedDates.concat(getDatesInRange(value[0], value[1])));
         }
@@ -125,10 +125,10 @@ function ShipCalendar(props) {
                 />
             </div>
             <div className="controller-div">
-                <button onClick={rentShip}>
+                <button className="rent-button" onClick={rentShip}>
                     Rent
                 </button>
-                <p>Cost: {rentCost}</p>
+                <p className="rent-cost-data">Cost: {rentCost}</p>
             </div>
         </div>
     );
