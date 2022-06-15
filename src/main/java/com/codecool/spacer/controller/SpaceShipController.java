@@ -2,7 +2,9 @@ package com.codecool.spacer.controller;
 
 import com.codecool.spacer.model.Filter;
 import com.codecool.spacer.model.SpaceShip;
+import com.codecool.spacer.model.User;
 import com.codecool.spacer.service.SpaceShipService;
+import com.codecool.spacer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,10 +15,12 @@ import java.util.List;
 @RestController
 public class SpaceShipController {
     private SpaceShipService spaceShipService;
+    private UserService userService;
 
     @Autowired
-    public SpaceShipController(SpaceShipService spaceShipService) {
+    public SpaceShipController(SpaceShipService spaceShipService, UserService userService) {
         this.spaceShipService = spaceShipService;
+        this.userService = userService;
     }
 
     @CrossOrigin
@@ -57,6 +61,7 @@ public class SpaceShipController {
 
     @PostMapping("api/spaceship/{id}/rent/{userId}")
     public void rentSpaceShip(@PathVariable int id, @PathVariable int userId, @RequestBody List<Date> dates){
-        spaceShipService.rentSpaceShip(id, userId, dates.get(0), dates.get(1));
+        User targetUser = userService.getUserById(userId);
+        spaceShipService.rentSpaceShip(id, targetUser, dates.get(0), dates.get(1));
     }
 }

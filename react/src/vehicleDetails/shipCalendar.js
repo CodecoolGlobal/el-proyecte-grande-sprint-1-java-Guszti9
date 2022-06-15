@@ -3,8 +3,18 @@ import {useState} from "react";
 
 function ShipCalendar(props) {
     const [value, onChange] = useState(null);
-    const [type, setType] = useState("null")
-    const [rentedDates, setRentedDates] = useState([new Date(2022, 6, 2)])
+    const [type, setType] = useState("null");
+    const [rentedDates, setRentedDates] = useState([new Date(2022, 6, 2)]);
+
+    function fetchRent() {
+        fetch(`http://localhost:8080/api/spaceship/${props.id}/rent/0`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify([value[0], value[1]])
+        }).then();
+    }
 
     function getDatesInRange(startDate, endDate) {
         const date = new Date(startDate.getTime());
@@ -33,6 +43,7 @@ function ShipCalendar(props) {
         setType("null");
 
         if (value.length === 2) {
+            fetchRent();
             setRentedDates(rentedDates.concat(getDatesInRange(value[0], value[1])));
         }
     }

@@ -22,11 +22,10 @@ public class ShipCalendar {
         this.userService = userService;
     }
 
-    public boolean addReservation(int userId, Date startDate, Date endDate) {
+    public boolean addReservation(User targetUser, Date startDate, Date endDate) {
         if (!isTimeOccupied(startDate, endDate)) {
-            ShipBook newBooking = new ShipBook(userId, shipId, startDate, endDate);
+            ShipBook newBooking = new ShipBook(targetUser.getId(), shipId, startDate, endDate);
             rentedDates.add(newBooking);
-            User targetUser = userService.getUserById(userId);
             targetUser.addReservation(newBooking);
             return true;
         }
