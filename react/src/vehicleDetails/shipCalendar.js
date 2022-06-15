@@ -19,23 +19,43 @@ function ShipCalendar(props) {
         return dates;
     }
 
+    function isDateIntervalFree(startDate, endDate) {
+        for (let rentDate of rentedDates) {
+            if (startDate.getTime() < rentDate.getTime() && rentDate.getTime() < endDate.getTime()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     const rentShip = () => {
-      if (value.length === 2) {
-          setRentedDates(rentedDates.concat(getDatesInRange(value[0], value[1])));
-      }
+        onChange(null);
+        setType("null");
+
+        if (value.length === 2) {
+            setRentedDates(rentedDates.concat(getDatesInRange(value[0], value[1])));
+        }
     }
 
     const onClick = date => {
+        if (rentedDates.some(e => e.getTime() === date.getTime())) return;
+
         if (type === "null") {
             onChange(date);
             setType("date");
         } else if (type === "date") {
             if (date < value) {
-                onChange([date, new Date(value.setDate(value.getDate() + 1))]);
+                if (isDateIntervalFree(date, value)) {
+                    onChange([date, new Date(value.setDate(value.getDate() + 1))]);
+                    setType("interval");
+                }
+
             } else {
-                onChange([value, new Date(date.setDate(date.getDate() + 1))]);
+                if (isDateIntervalFree(value, date)) {
+                    onChange([value, new Date(date.setDate(date.getDate() + 1))]);
+                    setType("interval")
+                }
             }
-            setType("interval");
         } else {
             onChange(date);
             setType("date");
