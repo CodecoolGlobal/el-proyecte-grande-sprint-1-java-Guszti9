@@ -26,14 +26,14 @@ function UserAdvertisements(props) {
 
 
     return (
-        data.map((d) =>
-            <Link to={"/spaceship-details/" + d.id}>
+        data.map((d, index) =>
+            <Link className="ship-image-link" to={"/spaceship-details/" + d.id} key={index}>
                 <div className="card" data-id={d.id}>
                     <div className="card-text">
-                        <h2>{d.name}</h2>
+                        <h2 className="ship-name-text">{d.name}</h2>
                         <img src={"../" + d.image[0]} width="170" height="140"
-                             alt="pic"></img> {/*src={logo} will be src={d.image}*/}
-                        <p>Price: {d.price} $</p>
+                             alt="pic" className="ship-image"></img>
+                        <p className="ship-name-text">Price: {d.price} $</p>
                     </div>
                 </div>
             </Link>

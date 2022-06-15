@@ -41,7 +41,6 @@ function VehicleDetails() {
             </div>
         );
     }
-
 }
 
 export default VehicleDetails;
