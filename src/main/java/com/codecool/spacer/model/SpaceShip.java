@@ -114,6 +114,9 @@ public class SpaceShip {
         return isAvailable;
     }
 
+    public ShipCalendar getShipCalendar() {
+        return shipCalendar;
+    }
 
     public void editSpaceShip(SpaceShip spaceShip) {
         name = spaceShip.getName();

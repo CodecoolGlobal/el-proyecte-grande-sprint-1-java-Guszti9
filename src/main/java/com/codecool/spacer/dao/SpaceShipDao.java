@@ -3,6 +3,7 @@ package com.codecool.spacer.dao;
 import com.codecool.spacer.model.Filter;
 import com.codecool.spacer.model.SpaceShip;
 
+import java.util.Date;
 import java.util.List;
 
 public interface SpaceShipDao {
@@ -21,6 +22,6 @@ public interface SpaceShipDao {
 
     void deleteSpaceShip(int id);
 
-    void rentSpaceShip(int id);
+    void rentSpaceShip(int id, int userId, Date StartDate, Date endDate);
 
 }

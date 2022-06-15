@@ -4,6 +4,8 @@ import com.codecool.spacer.dao.SpaceShipDao;
 import com.codecool.spacer.model.Filter;
 import com.codecool.spacer.model.SpaceShip;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Date;
 import java.util.List;
 
 public class SpaceShipService {
@@ -42,7 +44,7 @@ public class SpaceShipService {
         spaceShipDao.deleteSpaceShip(id);
     }
 
-    public void rentSpaceShip(int id) {
-        spaceShipDao.deleteSpaceShip(id);
+    public void rentSpaceShip(int id, int userId, Date startDate, Date endDate) {
+        spaceShipDao.rentSpaceShip(id, userId, startDate, endDate);
     }
 }

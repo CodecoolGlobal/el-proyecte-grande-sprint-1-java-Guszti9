@@ -1,7 +1,6 @@
 package com.codecool.spacer.model.calendar;
 
 import com.codecool.spacer.model.User;
-import com.codecool.spacer.model.calendar.ShipBook;
 import com.codecool.spacer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -9,7 +8,6 @@ import java.util.*;
 
 public class ShipCalendar {
     private int shipId;
-    private Calendar calendar;
     private List<ShipBook> rentedDates;
 
     @Autowired
@@ -17,7 +15,6 @@ public class ShipCalendar {
 
     public ShipCalendar(int shipId) {
         this.shipId = shipId;
-        this.calendar = Calendar.getInstance();
         this.rentedDates = new ArrayList<>();
     }
 

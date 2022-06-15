@@ -4,6 +4,7 @@ import com.codecool.spacer.dao.SpaceShipDao;
 import com.codecool.spacer.model.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -68,8 +69,9 @@ public class SpaceShipDaoMem implements SpaceShipDao {
     }
 
     @Override
-    public void rentSpaceShip(int id) {
-
+    public void rentSpaceShip(int id, int userId, Date StartDate, Date endDate) {
+        SpaceShip ship = getSpaceShipById(id);
+        ship.getShipCalendar().addReservation(userId, StartDate, endDate);
     }
 
     private List<SpaceShip> filterAvailable(List<SpaceShip> spaceShips){
