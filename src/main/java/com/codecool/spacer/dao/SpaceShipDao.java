@@ -25,4 +25,5 @@ public interface SpaceShipDao {
 
     void rentSpaceShip(int id, User targetUser, Date StartDate, Date endDate);
 
+    List<List<Date>> getRentedDates(int id);
 }

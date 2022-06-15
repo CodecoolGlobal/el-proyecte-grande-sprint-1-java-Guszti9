@@ -48,4 +48,8 @@ public class SpaceShipService {
     public void rentSpaceShip(int id, User targetUser, Date startDate, Date endDate) {
         spaceShipDao.rentSpaceShip(id, targetUser, startDate, endDate);
     }
+
+    public List<List<Date>> getRentedDates(int id) {
+        return spaceShipDao.getRentedDates(id);
+    }
 }

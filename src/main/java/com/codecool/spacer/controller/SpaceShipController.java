@@ -64,4 +64,9 @@ public class SpaceShipController {
         User targetUser = userService.getUserById(userId);
         spaceShipService.rentSpaceShip(id, targetUser, dates.get(0), dates.get(1));
     }
+
+    @GetMapping("api/spaceship/{id}/rented")
+    public List<List<Date>> getRentedDates(@PathVariable int id) {
+        return spaceShipService.getRentedDates(id);
+    }
 }

@@ -23,4 +23,12 @@ public class ShipBook {
     public int getUserId() {
         return userId;
     }
+
+    public Date getStartDay() {
+        return startDay;
+    }
+
+    public Date getEndDay() {
+        return endDay;
+    }
 }

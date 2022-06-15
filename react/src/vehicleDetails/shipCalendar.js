@@ -1,10 +1,16 @@
 import Calendar from 'react-calendar'
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 function ShipCalendar(props) {
     const [value, onChange] = useState(null);
     const [type, setType] = useState("null");
     const [rentedDates, setRentedDates] = useState([new Date(2022, 6, 2)]);
+
+    function fetchRentedDates(id) {
+        fetch(`http://localhost:8080/api/spaceship/${id}/rented`).
+        then(result => result.json()).
+        then(result => console.log(result));
+    }
 
     function fetchRent() {
         fetch(`http://localhost:8080/api/spaceship/${props.id}/rent/0`, {
@@ -15,6 +21,12 @@ function ShipCalendar(props) {
             body: JSON.stringify([value[0], value[1]])
         }).then();
     }
+
+    useEffect( () => {
+        if (props.id !== undefined) {
+            fetchRentedDates(props.id);
+        }
+    }, [props])
 
     function getDatesInRange(startDate, endDate) {
         const date = new Date(startDate.getTime());

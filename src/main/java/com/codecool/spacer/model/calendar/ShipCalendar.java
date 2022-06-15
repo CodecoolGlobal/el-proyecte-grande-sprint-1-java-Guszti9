@@ -5,6 +5,7 @@ import com.codecool.spacer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ShipCalendar {
     private int shipId;
@@ -16,10 +17,6 @@ public class ShipCalendar {
     public ShipCalendar(int shipId) {
         this.shipId = shipId;
         this.rentedDates = new ArrayList<>();
-    }
-
-    public void setUserService(UserService userService) {
-        this.userService = userService;
     }
 
     public boolean addReservation(User targetUser, Date startDate, Date endDate) {
@@ -49,5 +46,11 @@ public class ShipCalendar {
 
     public List<Date> getFreeDates() {
         return null;
+    }
+
+    public List<List<Date>> getRentedDates() {
+        return rentedDates.stream().
+                           map(r -> Arrays.asList(r.getStartDay(), r.getEndDay())).
+                           collect(Collectors.toList());
     }
 }

@@ -74,6 +74,12 @@ public class SpaceShipDaoMem implements SpaceShipDao {
         ship.getShipCalendar().addReservation(targetUser, StartDate, endDate);
     }
 
+    @Override
+    public List<List<Date>> getRentedDates(int id) {
+        SpaceShip ship = getSpaceShipById(id);
+        return ship.getShipCalendar().getRentedDates();
+    }
+
     private List<SpaceShip> filterAvailable(List<SpaceShip> spaceShips){
         return spaceShips.stream()
                 .filter(SpaceShip::isAvailable)
