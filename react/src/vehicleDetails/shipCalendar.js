@@ -4,12 +4,21 @@ import {useState, useEffect} from "react";
 function ShipCalendar(props) {
     const [value, onChange] = useState(null);
     const [type, setType] = useState("null");
-    const [rentedDates, setRentedDates] = useState([new Date(2022, 6, 2)]);
+    const [rentedDates, setRentedDates] = useState([]);
 
     function fetchRentedDates(id) {
         fetch(`http://localhost:8080/api/spaceship/${id}/rented`).
         then(result => result.json()).
-        then(result => console.log(result));
+        then(result => {
+            console.log(result);
+            let rentedDatesCollector = [];
+            for (let dateEndpoints of result) {
+                for (let date of getDatesInRange(new Date(dateEndpoints[0]), new Date(dateEndpoints[1]))) {
+                    rentedDatesCollector.push(date);
+                }
+            }
+            setRentedDates(rentedDatesCollector);
+        });
     }
 
     function fetchRent() {
