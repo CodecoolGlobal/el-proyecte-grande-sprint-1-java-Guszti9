@@ -5,12 +5,12 @@ function ShipCalendar(props) {
     const [value, onChange] = useState(null);
     const [type, setType] = useState("null");
     const [rentedDates, setRentedDates] = useState([]);
+    const [rentCost, setRentCost] = useState(0);
 
     function fetchRentedDates(id) {
         fetch(`http://localhost:8080/api/spaceship/${id}/rented`).
         then(result => result.json()).
         then(result => {
-            console.log(result);
             let rentedDatesCollector = [];
             for (let dateEndpoints of result) {
                 for (let date of getDatesInRange(new Date(dateEndpoints[0]), new Date(dateEndpoints[1]))) {
@@ -36,6 +36,10 @@ function ShipCalendar(props) {
             fetchRentedDates(props.id);
         }
     }, [props])
+
+    useEffect( () => {
+        calculateRentCost();
+    }, [value])
 
     function getDatesInRange(startDate, endDate) {
         const date = new Date(startDate.getTime());
@@ -69,6 +73,15 @@ function ShipCalendar(props) {
         }
     }
 
+    const calculateRentCost = () => {
+        if (value?.length === 2) {
+            let dayCount = getDatesInRange(value[0], value[1]).length;
+            setRentCost(props.price * dayCount);
+        } else {
+            setRentCost(0);
+        }
+    }
+
     const onClick = date => {
         if (rentedDates.some(e => e.getTime() === date.getTime())) return;
 
@@ -92,6 +105,8 @@ function ShipCalendar(props) {
             onChange(date);
             setType("date");
         }
+
+        calculateRentCost();
     }
 
     const colorRentDay = (date, view) => {
@@ -113,7 +128,7 @@ function ShipCalendar(props) {
                 <button onClick={rentShip}>
                     Rent
                 </button>
-                <p>Cost: </p>
+                <p>Cost: {rentCost}</p>
             </div>
         </div>
     );

@@ -35,7 +35,7 @@ function VehicleDetails() {
                     <ShipDetails ship={ship} />
                 </div>
                 <div className="vehicle-calendar-block">
-                    <ShipCalendar id={ship.id}/>
+                    <ShipCalendar id={ship.id} price={ship.price}/>
                 </div>
                 <Outlet/>
             </div>
