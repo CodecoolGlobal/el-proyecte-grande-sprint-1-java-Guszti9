@@ -3,10 +3,12 @@
     box-shadow: 0 0 15px 11px rgba(0,0,0,0.59);
     background: #3b3838;
     width: 50%;
-    height: 300px;
-    padding: 70px;
+    height: 15%;
+    padding: 2%;
     margin: 1.5% 1.5% 1.5% 13%;
     border-radius: 18px;
+    display: flex;
+    justify-content: center;
 }
 body#tinymce {
     background: #FFFFFF
