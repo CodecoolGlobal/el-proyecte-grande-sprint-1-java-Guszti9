@@ -7,7 +7,7 @@ function NavBar(){
         <nav>
             <div className="container">
                 <div className="button-container left">
-                    <a className="button">Main</a>
+                    <Link className="button" to="/">Main</Link>
                 </div>
                 <div className="button-container left">
                     <Link className="button" to="/user/0">Profile</Link>

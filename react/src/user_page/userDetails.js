@@ -7,9 +7,11 @@ function GetUserDetails(props) {
         <div id={"user-details"}>
             <table className="blueTable">
                 <thead>
+                <tr>
                     <th>
                         {props.id.firstName} {props.id.lastName}
                     </th>
+                </tr>
                 </thead>
                 <tbody>
                 <tr>

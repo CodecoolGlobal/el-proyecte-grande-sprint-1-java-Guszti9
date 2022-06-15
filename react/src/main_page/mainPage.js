@@ -84,7 +84,7 @@ function ResultContainer({result}){
     return(
         <div className="container result">
             <div className="card-container">
-                {result?.map((r, index) => <MainPageCard index={index} shipInfo={r}/>)}
+                {result?.map((r, index) => <MainPageCard key={index} shipInfo={r}/>)}
             </div>
         </div>
     )
