@@ -9,6 +9,7 @@ import UserPage from "./user_page/userPage";
 import Header from "./header";
 import NavBar from "./navBar";
 import Footer from "./footer";
+import AddSpaceShip from "./add_spaceship/addSpaceShip"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
                 <Route path="/" element={<App />} />
                 <Route path="user/:userId" element={<UserPage />} />
                 <Route path="spaceship-details/:spaceshipId" element={<VehicleDetails/>}/>
+                <Route path="add-spaceship" element={<AddSpaceShip/>}/>
             </Routes>
             <Footer/>
         </BrowserRouter>

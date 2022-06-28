@@ -10,10 +10,10 @@ function NavBar(){
                     <Link className="button" to="/">Main</Link>
                 </div>
                 <div className="button-container left">
-                    <Link className="button" to="/user/0">Profile</Link>
+                    <Link className="button" to="/user/1">Profile</Link>
                 </div>
                 <div className="button-container center">
-                    <a className="button plus">+</a>
+                    <Link className="button plus" to="/add-spaceship">+</Link>
                 </div>
                 <div className="button-container right">
                     <a className="button">Login</a>
