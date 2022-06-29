@@ -64,7 +64,7 @@ public class UserDaoMem implements UserDao {
     public List<SpaceShip> filterByUser(int userId) {
         List<SpaceShip> spaceShips = spaceShipService.getSpaceShips();
         return spaceShips.stream()
-                .filter(spaceShip -> spaceShip.getUserId() == userId)
+            .filter(spaceShip -> spaceShip.getUser().getId() == userId)
                 .collect(Collectors.toList());
     }
 }

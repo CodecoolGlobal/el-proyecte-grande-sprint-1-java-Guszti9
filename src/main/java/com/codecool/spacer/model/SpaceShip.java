@@ -8,6 +8,9 @@ import com.codecool.spacer.model.shipdata.Manufacturer;
 import java.math.BigDecimal;
 import java.util.List;
 
+import lombok.Data;
+
+@Data
 public class SpaceShip {
     private static int idCounter = 0;
     private int id = idCounter++;
@@ -26,10 +29,10 @@ public class SpaceShip {
     private Manufacturer manufacturer;
     private List<String> image;
     private ShipCalendar shipCalendar;
-    private int userId;
+    private User user;
     private Boolean isAvailable;
 
-    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, List<String> image, int userId) {
+    public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, List<String> image, User user) {
         this.name = name;
         this.brand = brand;
         this.year = year;
@@ -44,78 +47,8 @@ public class SpaceShip {
         this.manufacturer = manufacturer;
         this.image = image;
         this.shipCalendar = new ShipCalendar(id);
-        this.userId = userId;
+        this.user = user;
         this.isAvailable = true;
-    }
-
-    //GETTERS
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public List<String> getImage() {
-        return image;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Boolean getWeapons() {
-        return weapons;
-    }
-
-    public Integer getMass() {
-        return mass;
-    }
-
-    public Integer getLength() {
-        return length;
-    }
-
-    public Integer getMaxCrew() {
-        return maxCrew;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public Classification getClassification() {
-        return classification;
-    }
-
-    public FuelType getFuelType() {
-        return fuelType;
-    }
-
-    public Manufacturer getManufacturer() {
-        return manufacturer;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public Boolean isAvailable() {
-        return isAvailable;
-    }
-
-    public ShipCalendar getShipCalendar() {
-        return shipCalendar;
     }
 
     public void editSpaceShip(SpaceShip spaceShip) {
@@ -131,6 +64,6 @@ public class SpaceShip {
         classification = spaceShip.getClassification();
         fuelType = spaceShip.getFuelType();
         manufacturer = spaceShip.getManufacturer();
-        isAvailable = spaceShip.isAvailable();
+        isAvailable = spaceShip.getIsAvailable();
     }
 }
