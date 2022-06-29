@@ -55,5 +55,8 @@ public class SpaceShipDataIntegrationTests {
                                     user);
 
         var ship = shipRepository.save(newShip);
+
+        assertEquals("My cool ship", ship.getName());
+        assertEquals(null, ship.getUser());
     }
 }
