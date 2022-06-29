@@ -1,34 +1,33 @@
-
 package com.codecool.spacer.model.calendar;
 
 import java.util.Date;
 
+import lombok.Data;
+
+import com.codecool.spacer.model.SpaceShip;
+import com.codecool.spacer.model.User;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Data
+@Entity
 public class ShipBook {
-    private int userId;
-    private int shipId;
+    @Id
+    private long id;
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    private SpaceShip ship;
     private Date startDay;
     private Date endDay;
 
-    public ShipBook(int userId, int shipId, Date startDay, Date endDay) {
-        this.userId = userId;
-        this.shipId = shipId;
+    public ShipBook(User user, SpaceShip ship, Date startDay, Date endDay) {
+        this.user = user;
+        this.ship = ship;
         this.startDay = startDay;
         this.endDay = endDay;
     }
 
-    public int getShipId() {
-        return shipId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public Date getStartDay() {
-        return startDay;
-    }
-
-    public Date getEndDay() {
-        return endDay;
-    }
 }

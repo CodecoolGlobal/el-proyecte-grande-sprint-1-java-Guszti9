@@ -1,27 +1,38 @@
 package com.codecool.spacer.model.calendar;
 
 import com.codecool.spacer.model.User;
-import com.codecool.spacer.service.UserService;
+import com.codecool.spacer.model.SpaceShip;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import lombok.Data;
+
+@Data
+@Entity
 public class ShipCalendar {
-    private int shipId;
+    @Id
+    private long id;
+    @OneToOne
+    private SpaceShip ship;
+    @OneToMany
     private List<ShipBook> rentedDates;
 
-    @Autowired
-    private UserService userService;
-
-    public ShipCalendar(int shipId) {
-        this.shipId = shipId;
+    public ShipCalendar(SpaceShip ship) {
+        this.ship = ship;
         this.rentedDates = new ArrayList<>();
     }
 
     public boolean addReservation(User targetUser, Date startDate, Date endDate) {
         if (!isTimeOccupied(startDate, endDate)) {
-            ShipBook newBooking = new ShipBook(targetUser.getId(), shipId, startDate, endDate);
+            ShipBook newBooking = new ShipBook(targetUser, ship, startDate, endDate);
             rentedDates.add(newBooking);
             targetUser.addReservation(newBooking);
             return true;
@@ -31,8 +42,7 @@ public class ShipCalendar {
 
     public void deleteReservation(ShipBook shipBook) {
         rentedDates.remove(shipBook);
-        int userId = shipBook.getUserId();
-        User targetUser = userService.getUserById(userId);
+        User targetUser = shipBook.getUser();
         targetUser.removeReservation(shipBook);
     }
 

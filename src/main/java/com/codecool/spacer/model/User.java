@@ -6,9 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import lombok.Data;
+
+@Data
+@Entity
 public class User {
-    private static int idCounter = 0;
-    private final int id = idCounter++;
+    @Id
+    private long id;
 
     private String firstName;
     private String lastName;
@@ -19,7 +27,9 @@ public class User {
     private String email;
     private String linkedIn;
     private String faceBook;
+    @OneToMany(mappedBy="user")
     private List<SpaceShip> ships;
+    @OneToMany(mappedBy="user")
     private List<ShipBook> reservations;
 
     public User(String firsName, String lastName, String picture, String description, String password, String phoneNumber, String email, String linkedIn, String facebook) {
@@ -34,42 +44,6 @@ public class User {
         this.faceBook = facebook;
         ships = new ArrayList<>();
         reservations = new ArrayList<>();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getFaceBook() {
-        return faceBook;
-    }
-
-    public String getLinkedIn() {
-        return linkedIn;
     }
 
     public void editUser(User user) {

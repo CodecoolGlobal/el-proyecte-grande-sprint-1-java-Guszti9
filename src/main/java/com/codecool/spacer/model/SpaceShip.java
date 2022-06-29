@@ -7,13 +7,19 @@ import com.codecool.spacer.model.shipdata.Manufacturer;
 
 import java.math.BigDecimal;
 import java.util.List;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
+@Entity
 @Data
 public class SpaceShip {
-    private static int idCounter = 0;
-    private int id = idCounter++;
+    @Id
+    private long id;
 
     private String name;
     private String brand;
@@ -27,8 +33,11 @@ public class SpaceShip {
     private Classification classification;
     private FuelType fuelType;
     private Manufacturer manufacturer;
+    @ElementCollection(targetClass=String.class)
     private List<String> image;
+    @OneToOne(mappedBy="ship")
     private ShipCalendar shipCalendar;
+    @ManyToOne
     private User user;
     private Boolean isAvailable;
 
@@ -46,7 +55,7 @@ public class SpaceShip {
         this.fuelType = fuelType;
         this.manufacturer = manufacturer;
         this.image = image;
-        this.shipCalendar = new ShipCalendar(id);
+        this.shipCalendar = new ShipCalendar(this);
         this.user = user;
         this.isAvailable = true;
     }
