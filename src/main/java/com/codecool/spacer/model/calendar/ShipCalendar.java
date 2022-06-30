@@ -30,6 +30,10 @@ public class ShipCalendar {
         this.rentedDates = new ArrayList<>();
     }
 
+    public ShipCalendar() {
+
+    }
+
     public boolean addReservation(User targetUser, Date startDate, Date endDate) {
         if (!isTimeOccupied(startDate, endDate)) {
             ShipBook newBooking = new ShipBook(targetUser, ship, startDate, endDate);
