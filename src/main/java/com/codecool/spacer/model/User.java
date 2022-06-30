@@ -46,6 +46,10 @@ public class User {
         reservations = new ArrayList<>();
     }
 
+    public User() {
+
+    }
+
     public void editUser(User user) {
         firstName = user.getFirstName();
         lastName = user.getLastName();

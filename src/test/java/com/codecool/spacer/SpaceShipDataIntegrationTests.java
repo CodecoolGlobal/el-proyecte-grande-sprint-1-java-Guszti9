@@ -90,8 +90,42 @@ public class SpaceShipDataIntegrationTests {
 
         SpaceShip ship = shipRepository.save(newShip);
 
-        Optional<SpaceShip> foundShip = shipRepository.findById(0L);
+        Optional<SpaceShip> foundShip = shipRepository.findById(1L);
 
-        assertThat(foundShip).isNotNull();
+        assertThat(foundShip).isNotEmpty();
+    }
+
+    @Test
+    public void deleteShipById(){
+        boolean hasWeapons = false;
+        int mass = 10000;
+        int length = 500;
+        int maxCrew = 250;
+        BigDecimal price = new BigDecimal(15000);
+        List<String> images = List.of();
+        User user = null;
+        SpaceShip newShip = new SpaceShip("My cool ship",
+                "Rebels",
+                2088,
+                "This is the coolest ship ever",
+                hasWeapons,
+                mass,
+                length,
+                maxCrew,
+                price,
+                Classification.TRANSPORT,
+                FuelType.DIESEL,
+                Manufacturer.TUMBRIL,
+                images,
+                user);
+
+        SpaceShip ship = shipRepository.save(newShip);
+
+        shipRepository.deleteById(ship.getId());
+
+        Optional<SpaceShip> empty = Optional.empty();
+        Optional<SpaceShip> foundShip = shipRepository.findById(1L);
+
+        assertThat(foundShip).isEqualTo(empty);
     }
 }

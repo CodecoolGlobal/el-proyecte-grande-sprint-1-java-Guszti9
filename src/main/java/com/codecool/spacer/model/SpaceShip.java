@@ -7,18 +7,16 @@ import com.codecool.spacer.model.shipdata.Manufacturer;
 
 import java.math.BigDecimal;
 import java.util.List;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Data
 public class SpaceShip {
     @Id
+    @GeneratedValue
     private long id;
 
     private String name;
@@ -34,11 +32,11 @@ public class SpaceShip {
     private FuelType fuelType;
     private Manufacturer manufacturer;
     @ElementCollection(targetClass=String.class)
-    private List<String> image;
+    @ToString.Exclude private List<String> image;
     @OneToOne(mappedBy="ship")
-    private ShipCalendar shipCalendar;
+    @ToString.Exclude private ShipCalendar shipCalendar;
     @ManyToOne
-    private User user;
+    @ToString.Exclude private User user;
     private Boolean isAvailable;
 
     public SpaceShip(String name, String brand, Integer year, String description, Boolean weapons, Integer mass, Integer length, Integer maxCrew, BigDecimal price, Classification classification, FuelType fuelType, Manufacturer manufacturer, List<String> image, User user) {
@@ -58,6 +56,10 @@ public class SpaceShip {
         this.shipCalendar = new ShipCalendar(this);
         this.user = user;
         this.isAvailable = true;
+    }
+
+    public SpaceShip() {
+
     }
 
     public void editSpaceShip(SpaceShip spaceShip) {

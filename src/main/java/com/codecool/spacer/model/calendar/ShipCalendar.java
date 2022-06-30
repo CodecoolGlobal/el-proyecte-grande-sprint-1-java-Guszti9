@@ -2,6 +2,7 @@ package com.codecool.spacer.model.calendar;
 
 import com.codecool.spacer.model.User;
 import com.codecool.spacer.model.SpaceShip;
+import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
@@ -23,7 +24,7 @@ public class ShipCalendar {
     @OneToOne
     private SpaceShip ship;
     @OneToMany
-    private List<ShipBook> rentedDates;
+    @ToString.Exclude private List<ShipBook> rentedDates;
 
     public ShipCalendar(SpaceShip ship) {
         this.ship = ship;
